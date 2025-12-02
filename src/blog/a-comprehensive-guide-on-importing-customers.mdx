@@ -1,0 +1,56 @@
+---
+tagline: Compliance
+title: 'A Comprehensive Guide on Importing Customers'
+description: 'Delivering a good user experience without compromising the authoring experience required us to rethink data onboarding.'
+author: 'Savannah Nguyen'
+date: '2023-10-24'
+featured: true
+latest: true
+tags: ['Compliance']
+coverImage: '/images/blog/1.webp'
+---
+
+<small>5–7 minute read</small>
+
+CSV, API, or UI? Mapping, validation, safe retries—plus a rollback plan.
+
+---
+
+## Why Customer Importing Matters
+
+For any SaaS business, importing customer data is one of the most crucial and delicate onboarding steps. Done right, it feels invisible—users see their customers appear instantly, ready to go. Done poorly, it can erode trust in your product before the first session even ends.
+
+At Metafi, we built a customer import framework that balances flexibility for developers with safety for operators. It’s the bridge between data chaos and a working CRM.
+
+## Data Sources: CSV, API, and Direct Sync
+
+- **CSV Imports:** Still the most common route. Easy for users but error-prone. We introduced schema detection and instant feedback to validate headers and data types before upload.
+- **API Imports:** Ideal for power users. APIs let larger clients run nightly syncs. We versioned endpoints, added safe retries, and built audit trails for every record.
+- **Direct Sync:** Integrations with tools like Salesforce or HubSpot use OAuth2 to ensure secure tokenized access. Data sync happens in near real-time with rollback on any validation failure.
+
+## Mapping and Validation
+
+Every import requires a mapping layer. We designed a guided UI that auto-detects columns but lets users override or ignore fields. Behind the scenes, our validator checks:
+
+- Email and phone format
+- Duplicates and conflicts
+- Referential integrity (linked accounts or billing info)
+
+If errors occur, users can download a detailed CSV error report.
+
+## Safe Retries and Rollbacks
+
+Our import pipeline is idempotent. Each row carries a unique checksum. If a retry is triggered, we skip rows that already succeeded, and roll back only the failed subset.  
+That means no duplicate customers and no partial imports that silently break your CRM.
+
+## Compliance and Security
+
+Customer data import isn’t just technical—it’s regulatory. GDPR and CCPA require clear data provenance. We store every import event with metadata (who, when, what source) and allow admins to delete datasets at any time.
+
+## Lessons Learned
+
+1. Transparency beats magic: Users prefer seeing progress and errors clearly.
+2. Asynchronous jobs need real-time feedback: a progress bar or webhook beats silent background tasks.
+3. Validation early saves engineering pain later.
+
+With these principles, importing customers becomes not just a setup step—but a trust-building moment in your user journey.

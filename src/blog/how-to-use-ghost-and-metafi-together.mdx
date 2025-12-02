@@ -1,0 +1,41 @@
+---
+tagline: Engineering
+title: "How to Use Ghost and Metafi Together."
+description: "Are you running a membership site on Ghost? If so, integrating Metafi directly with your Ghost site can streamline…"
+author: "Savannah Nguyen"
+date: "2023-10-24"
+featured: false
+latest: false
+tags: ["Engineering"]
+coverImage: "/images/blog/6.webp"
+---
+
+<small>6–8 minute read</small>
+
+Step-by-step guide: events in, invoices out, and how to avoid double-counting.
+
+---
+
+## Overview
+
+Ghost powers the content layer; Metafi handles the financial layer.  
+Connecting the two lets you track revenue per subscriber, automate invoices, and sync churn events.
+
+## Setup Steps
+
+1. **Create a Metafi account** and generate an API key.
+2. **Install the Ghost integration** via your admin panel.
+3. **Map your Ghost members** to Metafi customers.
+4. **Test a subscription event**—it should appear instantly in your Metafi dashboard.
+
+## Preventing Double-Counting
+
+When Ghost sends subscription renewals, Metafi verifies via event ID to ensure each transaction is unique.  
+We store a checksum per event to make reconciliation deterministic.
+
+## Why It Matters
+
+For creators, the hardest part of growth is visibility.  
+By syncing Ghost and Metafi, you see true MRR, active members, and refunds—all in one place.
+
+Integrations should amplify creativity, not distract from it.

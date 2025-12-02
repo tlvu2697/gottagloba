@@ -1,7 +1,6 @@
 import { FlatCompat } from "@eslint/eslintrc";
 import tseslint from "typescript-eslint";
 import pluginQuery from "@tanstack/eslint-plugin-query";
-import nextVitals from "eslint-config-next/core-web-vitals";
 
 const compat = new FlatCompat({
   baseDirectory: import.meta.dirname,
@@ -11,8 +10,7 @@ export default tseslint.config(
   {
     ignores: [".next"],
   },
-  ...compat.extends(),
-  ...nextVitals,
+  ...compat.extends("next/core-web-vitals"),
   ...pluginQuery.configs["flat/recommended"],
   {
     files: ["**/*.ts", "**/*.tsx"],
@@ -22,6 +20,7 @@ export default tseslint.config(
       ...tseslint.configs.stylisticTypeChecked,
     ],
     rules: {
+      "react/jsx-no-undef": "off",
       "@typescript-eslint/array-type": "off",
       "@typescript-eslint/consistent-type-definitions": "off",
       "@typescript-eslint/consistent-type-imports": [

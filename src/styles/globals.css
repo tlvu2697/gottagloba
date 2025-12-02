@@ -1,6 +1,259 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-@theme {
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+@plugin 'tailwindcss-animate';
+@plugin '@tailwindcss/typography';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: oklch(1 0 89.88); /* #FFFFFF */
+  --foreground: oklch(0.172 0.006 286.3); /* #0D0D12 */
+  --card: oklch(1 0 89.88); /* #FFFFFF */
+  --card-foreground: oklch(0.172 0.006 286.3); /* #0D0D12 */
+  --popover: oklch(1 0 89.88); /* #FFFFFF */
+  --popover-foreground: oklch(0.172 0.006 286.3); /* #0D0D12 */
+  --primary: oklch(0.172 0.006 286.3); /* #0D0D12 */
+  --primary-foreground: oklch(1 0 89.88); /* #FFFFFF */
+  --secondary: oklch(0.9461 0 89.88); /* #EDEDED */
+  --secondary-foreground: oklch(0.2046 0 89.88); /* #171717 */
+  --muted: oklch(0.9702 0 89.88); /* #F5F5F5 */
+  --muted-foreground: oklch(0.61 0.03 270); /* #666D80 */
+  --accent: oklch(0.982 0.004 230); /* #F8FAFB */
+  --accent-foreground: oklch(0.2046 0 89.88); /* #171717 */
+  --destructive: oklch(0.6368 0.2078 25.33); /* #EF4444 */
+  --destructive-foreground: oklch(1 0 89.88); /* #FFFFFF */
+  --border: oklch(0.924 0.003 255.9); /* #DFE1E7 */
+  --border-light: oklch(0.956 0.004 248.7);
+  --input: oklch(0.9219 0 89.88); /* #E5E5E5 */
+  --ring: oklch(0.172 0.006 286.3); /* #0D0D12 */
+  --chart-1: oklch(0.6486 0.1771 32.95); /* #E65C41 */
+  --chart-2: oklch(0.6304 0.1013 183.03); /* #2A9D8F */
+  --chart-3: oklch(0.3753 0.0438 226.2); /* #264653 */
+  --chart-4: oklch(0.8342 0.117 87.43); /* #E9C46A */
+  --chart-5: oklch(0.7806 0.1269 57.86); /* #F4A261 */
+  --logo-gray: oklch(0.66 0.027 268.5); /* #818898 */
+  --tagline: oklch(0.57 0.223 275.64); /* #5F57FF */
+  --features-hero-top: oklch(0.9595 0.02 286.02); /* #F0F0FF */
+  --features-hero-top-0: oklch(0.9595 0.02 286.02 / 0); /* #F0F0FF @ 0% */
+  --features-hero-bottom: oklch(0.9782 0.0034 247.86); /* #F6F8FA */
+  --shadow-soft: 0 2px 4px 0 rgba(13, 13, 18, 0.15);
+  --shadow-light: 0 2px 4px 0 rgba(13, 13, 18, 0.04);
+  --success: oklch(0.79 0.12 179.5); /* #40C4AA */
+  --grid-border: var(--border); /* oklch(0.924 0.003 255.9) */
+  --grid-hover: oklch(0.97 0 89.88 / 0.7);
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-marquee: marquee 25s linear infinite;
+}
+
+.dark {
+  --background: oklch(0.23 0.02 265);
+  --card: oklch(0.26 0.02 265);
+  --popover: oklch(0.26 0.02 265);
+  --foreground: oklch(0.98 0.01 255);
+  --card-foreground: var(--foreground);
+  --popover-foreground: var(--foreground);
+  --primary: oklch(0.98 0.01 255);
+  --primary-foreground: oklch(0.23 0.02 265);
+  --secondary: oklch(0.29 0.02 265);
+  --secondary-foreground: var(--foreground);
+  --accent: oklch(0.29 0.02 265);
+  --accent-foreground: var(--foreground);
+  --muted: oklch(0.28 0.015 265);
+  --muted-foreground: oklch(0.75 0.02 260);
+  --destructive: oklch(0.62 0.21 25.3);
+  --destructive-foreground: oklch(0.98 0.005 255);
+  --success: oklch(0.74 0.12 179.5);
+  --border: oklch(0.36 0.01 265);
+  --border-light: oklch(0.42 0.01 265);
+  --input: oklch(0.29 0.02 265);
+  --ring: oklch(0.92 0.02 255);
+  --chart-1: oklch(0.72 0.19 33);
+  --chart-2: oklch(0.7 0.1 183);
+  --chart-3: oklch(0.58 0.05 226);
+  --chart-4: oklch(0.78 0.11 87);
+  --chart-5: oklch(0.74 0.12 58);
+  --logo-gray: oklch(0.77 0.02 268.5);
+  --tagline: oklch(0.57 0.223 275.64);
+  --features-hero-top: oklch(0.32 0.015 268);
+  --features-hero-top-0: oklch(0.32 0.015 268 / 0);
+  --features-hero-bottom: oklch(0.28 0.015 265);
+  --shadow-soft: 0 2px 4px 0 rgba(0, 0, 0, 0.35);
+  --shadow-light: 0 2px 8px -1px rgba(0, 0, 0, 0.3);
+  --grid-border: var(--border-light); /* oklch(0.42 0.01 265) */
+  --grid-hover: oklch(0.92 0.02 255 / 0.1);
+}
+
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+.force-light-vars {
+  /* base tokens (light) */
+  --primary: oklch(0.172 0.006 286.3); /* #0D0D12 */
+  --primary-foreground: oklch(1 0 89.88); /* #FFFFFF */
+  --foreground: oklch(0.172 0.006 286.3);
+  --muted-foreground: oklch(0.61 0.03 270); /* #666D80 */
+  --border: oklch(0.924 0.003 255.9);
+
+  /* also pin the *resolved* theme vars many utilities read */
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-foreground: var(--foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+}
+
+@theme inline {
+  --font-inter: var(--font-inter);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-border: var(--border);
+  --color-border-light: var(--border-light);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --color-logo-gray: var(--logo-gray);
+
+  --color-tagline: var(--tagline);
+  --color-success: var(--success);
+
+  --shadow-soft: var(--shadow-soft);
+  --shadow-light: var(--shadow-light);
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+
+  /* on small screens, full-width up to padding */
+  max-width: 100%;
+
+  /* when you hit your “desktop” breakpoint, cap it */
+  @media (min-width: 1200px) {
+    max-width: 1200px;
+  }
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  body {
+    font-family:
+      var(--font-inter),
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      Segoe UI,
+      Roboto,
+      Helvetica,
+      Arial,
+      'Apple Color Emoji',
+      'Segoe UI Emoji';
+  }
+
+  h1,
+  h2 {
+    font-family: var(--font-inter), sans-serif;
+  }
+
+  .bg-features-hero {
+    /* 180deg = top ➜ bottom */
+    background-image: linear-gradient(
+      180deg,
+      var(--features-hero-top-0) 0%,
+      var(--features-hero-bottom) 100%
+    );
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  .shadow-light {
+    box-shadow: var(--shadow-light);
+  }
+
+  .animate-accordion-down {
+    animation: accordion-down 200ms ease-out;
+  }
+  .animate-accordion-up {
+    animation: accordion-up 200ms ease-in;
+  }
+}
+@layer components {
+  button {
+    cursor: pointer;
+  }
+  [class*='border'] {
+    @apply border-border;
+  }
+}
+
+body {
+  position: relative;
 }
