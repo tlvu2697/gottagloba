@@ -1,23 +1,25 @@
-'use client';
-
-import Image from 'next/image';
+import { cn, strapiUrl } from "@/lib/utils";
+import type { StrapiImage } from "@/types/strapi-image";
+import Image from "next/image";
 
 type Props = {
   tagline?: string;
   title: string;
   intro?: string;
-  image?: string;
+  image?: StrapiImage;
   author?: string;
+  avatar?: StrapiImage;
   published?: string;
   children: React.ReactNode;
 };
 
-export default function MetafiBlogPost({
+export default function BlogPost({
   tagline,
   title,
   intro,
   image,
   author,
+  avatar,
   published,
   children,
 }: Props) {
@@ -40,10 +42,10 @@ export default function MetafiBlogPost({
 
             {image ? (
               <div className="mt-6">
-                <div className="relative mx-auto aspect-[16/9] w-full max-w-[980px]">
+                <div className="relative mx-auto aspect-video w-full max-w-[980px]">
                   <Image
-                    src={image}
-                    alt={title}
+                    src={strapiUrl(image.url)!}
+                    alt={image.alternativeText ?? title}
                     fill
                     priority
                     className="rounded-xl object-cover"
@@ -53,23 +55,25 @@ export default function MetafiBlogPost({
               </div>
             ) : null}
 
-            {(author || published) && (
+            {(author ?? published) && (
               <div className="text-muted-foreground mt-5 flex items-center gap-3">
-                <Image
-                  src="/images/homepage/testimonials/1.webp"
-                  alt=""
-                  width={28}
-                  height={28}
-                  className="h-7 w-7 rounded-full object-cover"
-                />
+                {avatar && (
+                  <Image
+                    src={strapiUrl(avatar.url)!}
+                    alt={avatar.alternativeText ?? title}
+                    width={28}
+                    height={28}
+                    className="h-7 w-7 rounded-full object-cover"
+                  />
+                )}
                 {author && <span className="text-sm">{author}</span>}
                 {author && published && <span className="text-sm">•</span>}
                 {published && (
                   <span className="text-sm">
                     {new Date(published).toLocaleDateString(undefined, {
-                      month: 'short',
-                      day: '2-digit',
-                      year: 'numeric',
+                      month: "short",
+                      day: "2-digit",
+                      year: "numeric",
                     })}
                   </span>
                 )}
@@ -83,14 +87,15 @@ export default function MetafiBlogPost({
         <div className="container px-0">
           <div className="mx-auto max-w-[992px] px-4 py-6 md:py-12">
             <div
-              className={[
-                'prose max-w-none',
-                'prose-headings:text-foreground prose-h2:tracking-tight prose-h3:tracking-tight',
-                'prose-p:text-muted-foreground prose-li:text-muted-foreground',
-                'prose-a:text-tagline hover:prose-a:opacity-80',
-                'prose-hr:border-border prose-blockquote:text-muted-foreground',
-                'prose-img:rounded-xl',
-              ].join(' ')}
+              className={cn(
+                "prose max-w-none",
+                "prose-headings:text-foreground prose-h2:tracking-tight prose-h3:tracking-tight",
+                "prose-p:text-muted-foreground prose-li:text-muted-foreground",
+                "prose-a:text-tagline hover:prose-a:opacity-80",
+                "prose-hr:border-border prose-blockquote:text-muted-foreground",
+                "prose-img:rounded-xl",
+                "dark:prose-invert",
+              )}
             >
               {children}
             </div>

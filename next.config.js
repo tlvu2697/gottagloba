@@ -3,7 +3,7 @@
  * for Docker builds.
  */
 import createMDX from "@next/mdx";
-import "./src/env.js"
+import "./src/env.js";
 
 /** @type {import("next").NextConfig} */
 const config = {
@@ -24,7 +24,7 @@ const config = {
 const withMDX = createMDX({
   options: {
     remarkPlugins: ["remark-gfm"],
-    rehypePlugins: ["rehype-highlight"],
+    rehypePlugins: ["rehype-highlight", "rehype-raw", "rehype-sanitize"],
   },
 });
 

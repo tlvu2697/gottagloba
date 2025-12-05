@@ -1,7 +1,7 @@
 import MetafiCta from '@/components/sections/matafi-cta';
 import MetafiFaq from '@/components/sections/metafi-faq';
 import MetafiFeaturedBlogPosts, {
-  FeaturedCard,
+  type FeaturedCard,
 } from '@/components/sections/metafi-featured-blog-posts';
 import MetafiFeatures from '@/components/sections/metafi-features';
 import MetafiHero from '@/components/sections/metafi-hero';
