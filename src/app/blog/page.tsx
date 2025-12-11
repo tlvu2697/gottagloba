@@ -44,7 +44,6 @@ const fetchBlogPosts = async ({
   category?: string;
   featured?: boolean;
 }): Promise<GetBlogPostsResponse> => {
-  console.log("asd", query);
   const params = qs.stringify({
     sort: "publishedAt:desc",
     populate: ["authors.avatar", "image", "blogPostCategories"],

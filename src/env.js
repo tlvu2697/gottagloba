@@ -8,6 +8,9 @@ export const env = createEnv({
    */
   server: {
     NODE_ENV: z.enum(["development", "test", "production"]),
+    LEARNWORLDS_BASE_URL: z.string().url(),
+    LEARNWORLDS_CLIENT_ID: z.string().min(1),
+    LEARNWORLDS_CLIENT_SECRET: z.string().min(1),
   },
 
   /**
@@ -26,6 +29,9 @@ export const env = createEnv({
   runtimeEnv: {
     NODE_ENV: process.env.NODE_ENV,
     NEXT_PUBLIC_STRAPI_URL: process.env.NEXT_PUBLIC_STRAPI_URL,
+    LEARNWORLDS_BASE_URL: process.env.LEARNWORLDS_BASE_URL,
+    LEARNWORLDS_CLIENT_ID: process.env.LEARNWORLDS_CLIENT_ID,
+    LEARNWORLDS_CLIENT_SECRET: process.env.LEARNWORLDS_CLIENT_SECRET,
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially
