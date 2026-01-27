@@ -14,86 +14,86 @@ type Testimonial = {
 const TESTIMONIALS: Testimonial[] = [
   {
     quote:
-      '"Payments are the main interaction point between our financial services clients and their customers, and are core to our relationships beyond that sector too."',
-    name: "Charolette Hanlin",
-    role: "Co-Founder, Heroes Digital",
+      '"Gotta GLOBA\'s workplace scenarios helped me master upward management. I can now disagree with my manager respectfully and my ideas are being heard. This changed my career trajectory."',
+    name: "Minh Nguyen",
+    role: "Software Engineer, Tech Startup",
     avatar: "/images/homepage/testimonials/1.webp",
   },
   {
     quote:
-      '"Payments are pivotal in our financial operations, serving as the primary interface between our finance department and clients."',
-    name: "Novák Balázs",
-    role: "Co-Founder, WooCommerce",
+      '"The shadowing drills and diverse accent challenges prepared me for real international meetings. I went from feeling anxious to confident when speaking with our global team."',
+    name: "Thao Pham",
+    role: "Project Manager, Multinational Corp",
     avatar: "/images/homepage/testimonials/2.webp",
   },
   {
     quote:
-      '"Using this financial app has made me feel more organized and efficient in managing my finances."',
-    name: "Orosz Boldizsár",
-    role: "Founder, Okta",
+      '"I achieved IELTS 8.0 after 3 months with Gotta GLOBA. The structured approach and workplace vocabulary focus made all the difference. Now I\'m studying in Australia!"',
+    name: "Tuan Le",
+    role: "Graduate Student, Melbourne",
     avatar: "/images/homepage/testimonials/3.webp",
   },
   {
     quote:
-      '"The provided features are incredibly helpful in tracking expenses, managing investments, and planning for future financial goals."',
-    name: "Floyd Miles",
-    role: "Co-Founder, Slack",
+      '"The nano-skills approach is brilliant. Instead of overwhelming grammar lessons, I learned specific communication skills I use every day - negotiating tasks, handling meeting dynamics, defending strategies."',
+    name: "Linh Tran",
+    role: "Marketing Lead, E-commerce",
     avatar: "/images/homepage/testimonials/4.webp",
   },
   {
     quote:
-      '"This app has given me full control over my finances and provided greater confidence in making wise financial decisions."',
-    name: "Darrell Steward",
-    role: "Founder",
+      '"Gotta GLOBA taught me how to speak with authority in meetings. My presentations are clearer, my arguments are stronger, and I recently got promoted to team lead."',
+    name: "Huy Vo",
+    role: "Business Analyst, Financial Services",
     avatar: "/images/homepage/testimonials/5.webp",
   },
   {
     quote:
-      '"Since incorporating this finance app into my daily routine, I\'ve experienced a significant improvement in my financial management."',
-    name: "Devon Lane",
-    role: "Marketing, Google",
+      '"As a busy professional, I needed efficient learning. The authentic workplace scenarios meant every minute I spent studying had immediate real-world application. Best investment in my career."',
+    name: "Anh Nguyen",
+    role: "Product Designer, SaaS Company",
     avatar: "/images/homepage/testimonials/6.webp",
   },
   {
     quote:
-      '"We consolidated multiple payment tools into one platform—reporting and cash flow are finally clear."',
-    name: "Jenny Wilson",
-    role: "CFO, Mailchimp",
+      "\"The 'Meetings with Confidence' collection transformed how I participate in strategic discussions. I used to stay silent - now I drive outcomes and navigate tensions professionally.\"",
+    name: "Khoi Phan",
+    role: "Operations Manager, Logistics",
     avatar: "/images/homepage/testimonials/1.webp",
   },
   {
     quote:
-      '"The billing automation alone paid for the migration in under a month."',
-    name: "Jacob Jones",
-    role: "VP Ops, Notion",
+      '"From IELTS 6.0 to 7.5 in just two months! The structured practice and focus on high-impact vocabulary made studying efficient. I got my dream scholarship to the UK."',
+    name: "Mai Hoang",
+    role: "MBA Student, London",
     avatar: "/images/homepage/testimonials/2.webp",
   },
   {
     quote:
-      '"Gotta GLOBA\'s checkout improved conversion and cut our support tickets in half."',
-    name: "Eleanor Pena",
-    role: "Head of Product, Square",
+      '"Learning to handle conflict and manage pressure in English was game-changing. I now lead international projects with confidence and my boss noticed the improvement immediately."',
+    name: "Nam Tran",
+    role: "Engineering Manager, IoT Startup",
     avatar: "/images/homepage/testimonials/3.webp",
   },
   {
     quote:
-      '"Our finance team finally enjoys month-end. Reconciliation is effortless."',
-    name: "Courtney Henry",
-    role: "Finance Lead, Spotify",
+      '"The diverse accent training was exactly what I needed. I work with teams across India, UK, and US - now I understand everyone clearly and communicate effectively."',
+    name: "Lan Vo",
+    role: "HR Director, Tech Company",
     avatar: "/images/homepage/testimonials/4.webp",
   },
   {
     quote:
-      '"The analytics gave us visibility we didn\'t know we were missing."',
-    name: "Leslie Alexander",
-    role: "Director, Airtable",
+      '"Gotta GLOBA helped me build executive presence. I learned to command resources, defend my team strategically, and communicate at a senior level. Got my first director role!"',
+    name: "Phuc Nguyen",
+    role: "Director of Product, Fintech",
     avatar: "/images/homepage/testimonials/5.webp",
   },
   {
     quote:
-      '"From invoicing to recurring billing—everything lives in one place now."',
-    name: "Guy Hawkins",
-    role: "Founder, Raycast",
+      "\"The real-world scenarios taught me practical skills I use daily - respectful disagreement, prioritizing over refusing, strategic alignment. This isn't just English - it's career advancement.\"",
+    name: "Tien Le",
+    role: "Senior Consultant, Advisory Firm",
     avatar: "/images/homepage/testimonials/6.webp",
   },
 ];
@@ -133,16 +133,17 @@ export default function Testimonials() {
     <section id="testimonials" className="bg-accent px-6 lg:px-0">
       <div className="container px-0 py-16 sm:py-20 md:px-6 md:py-28">
         <p className="text-tagline mb-4 text-center text-sm leading-tight font-normal sm:text-base">
-          Our Customers
+          Success Stories
         </p>
 
         <h2 className="text-foreground mx-auto max-w-4xl text-center text-3xl leading-tight font-medium tracking-tight text-balance sm:text-4xl md:text-5xl">
-          See What Our <br className="hidden sm:block" />
-          Customers Are Saying
+          Real Progress from <br className="hidden sm:block" />
+          Real Professionals
         </h2>
 
         <p className="text-muted-foreground mx-auto mt-4 max-w-2xl text-center text-base font-normal sm:text-lg">
-          Here&apos;s what some of our customers say about our platform.
+          See how ambitious professionals transformed their careers through
+          workplace English mastery and IELTS success.
         </p>
 
         <div className="relative mt-10 md:mt-14">
@@ -163,7 +164,7 @@ export default function Testimonials() {
           }`}
         >
           <Button onClick={() => setExpanded((s) => !s)}>
-            {expanded ? "Show Less" : "See All Customer Stories"}
+            {expanded ? "Show Less" : "See All Success Stories"}
           </Button>
         </div>
       </div>

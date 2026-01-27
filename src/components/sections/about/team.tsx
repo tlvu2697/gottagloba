@@ -1,25 +1,26 @@
 "use client";
 
+import { strapiUrl } from "@/lib/utils";
+import type { Member } from "@/types/member";
 import Image from "next/image";
-
-type TeamMember = {
-  name: string;
-  role: string;
-  imageSrc: string;
-  imageAlt?: string;
-};
 
 export default function Team({
   overline = "Our Team",
-  title = "It's All About The People",
-  subtitle = "Hendrerit fames metus leo ut orci pretium. Sit vitae montes egestas montes mauris. Auctor vitae neque urna nam nunc pellentesque.",
-  members = DEFAULT_MEMBERS,
+  title = "Passionate Educators & Career Coaches",
+  subtitle = "Dedicated professionals combining language expertise with real-world experience to transform ambitious learners into confident global professionals.",
+  members,
+  isLoading,
 }: {
   overline?: string;
   title?: string;
   subtitle?: string;
-  members?: TeamMember[];
+  members: Member[];
+  isLoading: boolean;
 }) {
+  if (isLoading || members.length === 0) {
+    return null;
+  }
+
   return (
     <section id="team" className="bg-accent px-6 lg:px-0">
       <div className="container px-0 py-16 sm:py-20 md:px-6 md:py-24">
@@ -34,15 +35,17 @@ export default function Team({
         </div>
 
         <ul className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {members.map((m) => (
-            <li key={m.name}>
-              <article className="bg-card border-border-light shadow-light rounded-xl border p-4 pb-5">
-                <div className="relative h-[250px] w-full overflow-hidden rounded-[10px]">
+          {members.map((member, index) => {
+            const { displayName, role, avatar, linkedInUrl } = member;
+
+            const content = (
+              <article className="bg-card border-border-light shadow-light rounded-xl border p-4 pb-5 transition-all duration-200 hover:shadow-md">
+                <div className="relative h-[250px] w-full overflow-hidden rounded-[10px] bg-[#edf0f3]">
                   <Image
-                    src={m.imageSrc}
-                    alt={m.imageAlt ?? m.name}
+                    src={strapiUrl(avatar.url)!}
+                    alt={avatar.alternativeText ?? displayName}
                     fill
-                    className="object-cover"
+                    className="object-contain"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     priority={false}
                   />
@@ -51,48 +54,32 @@ export default function Team({
                 {/* Meta */}
                 <div className="mt-3 sm:mt-4">
                   <h3 className="text-foreground text-xl font-medium">
-                    {m.name}
+                    {displayName}
                   </h3>
-                  <p className="text-muted-foreground text-md mt-2">{m.role}</p>
+                  <p className="text-muted-foreground text-md mt-2">{role}</p>
                 </div>
               </article>
-            </li>
-          ))}
+            );
+
+            return (
+              <li key={`${displayName}-${index}`}>
+                {linkedInUrl ? (
+                  <a
+                    href={linkedInUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
+                    {content}
+                  </a>
+                ) : (
+                  content
+                )}
+              </li>
+            );
+          })}
         </ul>
       </div>
     </section>
   );
 }
-
-const DEFAULT_MEMBERS: TeamMember[] = [
-  {
-    name: "Darlene Robertson",
-    role: "Co-Founder & CEO",
-    imageSrc: "/images/team/1.webp",
-  },
-  {
-    name: "Ralph Edwards",
-    role: "Co-Founder & CTO",
-    imageSrc: "/images/team/2.webp",
-  },
-  {
-    name: "Dianne Russell",
-    role: "Engineering",
-    imageSrc: "/images/team/3.webp",
-  },
-  {
-    name: "Albert Flores",
-    role: "Engineering",
-    imageSrc: "/images/team/4.webp",
-  },
-  {
-    name: "Theresa Webb",
-    role: "Human Resources",
-    imageSrc: "/images/team/5.webp",
-  },
-  {
-    name: "Robert Fox",
-    role: "Growth",
-    imageSrc: "/images/team/6.webp",
-  },
-];

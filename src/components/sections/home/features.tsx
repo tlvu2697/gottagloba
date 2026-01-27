@@ -1,49 +1,43 @@
-import Image from "next/image";
-
-import AnimationCheckout from "@/components/ui/animation-checkout";
-import AnimationInvoicing from "@/components/ui/animation-invoicing";
-import AnimationPaymentLink from "@/components/ui/animation-payment-link";
-import AnimationRecurringBilling from "@/components/ui/animation-recurring-bill";
+import AnimationUpwardManagement from "@/components/ui/animation-upward-management";
+import AnimationMeetingsConfidence from "@/components/ui/animation-meetings-confidence";
+import AnimationIELTSMastery from "@/components/ui/animation-ielts-mastery";
+import AnimationWorkplaceEnglish from "@/components/ui/animation-workplace-english";
 
 type Feature = {
   title: string;
   description: string;
-  image: string;
-  href?: string;
+  component?: React.ReactNode;
 };
 
 const FEATURES: Feature[] = [
   {
-    title: "Checkout",
+    title: "Upward Management",
     description:
-      "Embed checkout into your website or direct customers to a Gotta-GLOBA-hosted page to easily and securely accept one-time payments or subscriptions.",
-    image: "/images/homepage/features/animation1.svg",
+      "Master high-level communication with superiors. Learn to manage pressure, handle conflict, command resources, and build executive presence through authentic workplace scenarios.",
+    component: <AnimationUpwardManagement className="absolute inset-0" />,
   },
   {
-    title: "Recurring Billing",
+    title: "Meetings with Confidence",
     description:
-      "Collect and retain more revenue, automate revenue management workflows, and accept payments.",
-    image: "/images/homepage/features/recurring-billing.webp",
+      "Speak with authority, defend strategically, and drive effective outcomes. Navigate meeting dynamics and tension like a seasoned professional.",
+    component: <AnimationMeetingsConfidence className="absolute inset-0" />,
   },
   {
-    title: "Invoicing",
+    title: "IELTS Mastery",
     description:
-      "Create an invoice and send it to your customers in minutes—no-code required—to easily collect payments.",
-    image: "/images/homepage/features/invoicing.webp",
+      "Achieve your target IELTS score with structured practice and high-impact vocabulary. Get the results you need for higher education and global opportunities.",
+    component: <AnimationIELTSMastery className="absolute inset-0" />,
   },
   {
-    title: "Payment Link",
+    title: "Workplace English Excellence",
     description:
-      "Sell online without a website. Create a full payment page in a few clicks and share the link with customers—no code required.",
-    image: "/images/homepage/features/payment-link.webp",
+      "Build professional fluency through shadowing drills, diverse accent challenges, and real career scenarios. Communicate confidently in any international workplace.",
+    component: <AnimationWorkplaceEnglish className="absolute inset-0" />,
   },
 ];
 
 function FeatureCard({ feature }: { feature: Feature }) {
-  const isCheckout = feature.title === "Checkout";
-  const isRecurring = feature.title === "Recurring Billing";
-  const isInvoicing = feature.title === "Invoicing";
-  const isPayment = feature.title === "Payment Link";
+  const { component } = feature;
 
   return (
     <div className="bg-card border-border-light relative flex flex-col rounded-2xl border p-6 text-left shadow-[0_2px_8px_-1px_rgba(13,13,18,0.04)]">
@@ -56,24 +50,7 @@ function FeatureCard({ feature }: { feature: Feature }) {
 
       <div className="relative mt-6 w-full overflow-hidden rounded-xl">
         <div className="bg-accent relative h-[220px] w-full sm:h-[260px] md:h-[300px]">
-          {isRecurring ? (
-            <AnimationRecurringBilling className="absolute inset-0" />
-          ) : isCheckout ? (
-            <AnimationCheckout className="absolute inset-0" />
-          ) : isInvoicing ? (
-            <AnimationInvoicing className="absolute inset-0" />
-          ) : isPayment ? (
-            <AnimationPaymentLink className="absolute inset-0" />
-          ) : (
-            <Image
-              src={feature.image}
-              alt={feature.title}
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 50vw"
-              priority={false}
-            />
-          )}
+          {component ?? null}
         </div>
       </div>
     </div>
@@ -87,18 +64,18 @@ const Features = () => {
     <section id="features" className="bg-background px-6 lg:px-0">
       <div className="container px-0 py-16 sm:py-20 md:px-6 md:py-28">
         <p className="text-tagline mb-4 text-center text-sm sm:text-base">
-          Features
+          Learning Collections
         </p>
 
         <h2 className="text-foreground mx-auto max-w-3xl text-center text-3xl leading-tight font-medium tracking-tight text-balance sm:text-4xl md:text-5xl">
-          Everything You Need to Run & <br className="hidden sm:block" />
-          Grow Your Business
+          Everything You Need for a <br className="hidden sm:block" />
+          Global Career
         </h2>
 
         <p className="text-muted-foreground mx-auto mt-4 max-w-2xl text-center text-base sm:text-lg">
-          All the tools and resources necessary for managing and expanding your
-          business, conveniently accessible in one place. Take control of your
-          journey to success with our comprehensive solutions.
+          Master professional English through nano-skills training. From
+          workplace communication to IELTS success - structured, effective, and
+          ready for real-world application.
         </p>
 
         <div className="mt-12 flex flex-col gap-6 md:mt-14 md:gap-8 lg:flex-row">

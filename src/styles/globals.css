@@ -231,6 +231,14 @@
     );
   }
 
+  .bg-tagline {
+    background-color: #3a5e96;
+  }
+
+  .text-tagline {
+    color: #3a5e96;
+  }
+
   .shadow-soft {
     box-shadow: var(--shadow-soft);
   }

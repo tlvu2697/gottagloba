@@ -17,14 +17,14 @@ type ThroughYearsProps = {
 };
 
 const DEFAULT_PARAS = [
-  `Encapsulates our journey of growth, innovation, and unwavering dedication to our customers. Over the years, Gotta GLOBA has evolved into a leading provider of financial solutions, constantly adapting to meet the ever-changing needs of businesses worldwide. Our success is not just measured in years but in the tangible impact we've made, backed by concrete data and statistics that validate our journey.`,
-  `With a proven track record of delivering results, Gotta GLOBA stands as a testament to our commitment to excellence and continuous improvement. Our growth trajectory is marked by milestones, each supported by solid numbers that underscore our achievements and validate our position as a trusted partner in the financial industry.`,
+  `Encapsulates our journey of empowering ambitious professionals to achieve global-scale careers. Gotta GLOBA has evolved into a dedicated platform for professional training and coaching, helping busy self-improvers speak English confidently in international workplaces and achieve high IELTS scores for higher education opportunities. Our success is measured in the lives we've transformed and the global career pathways we've opened.`,
+  `With structured and effective practice methods, Gotta GLOBA turns hard work into real progress. From language proficiency to career-scenario virtual simulations and dynamic professional networks, we provide the comprehensive support needed to harness opportunities across borders and rise above limitations, making global careers an achievable reality rather than a distant dream.`,
 ];
 
 const DEFAULT_STATS: Stat[] = [
-  { value: "2023", label: "Launched" },
-  { value: "1500+", label: "Team Members" },
-  { value: "131M", label: "Pre-seed Round" },
+  { value: "2025", label: "Launched" },
+  { value: "10+", label: "Team Members" },
+  { value: "10+", label: "Training Programs" },
 ];
 
 export default function ThroughYears({
@@ -57,8 +57,8 @@ export default function ThroughYears({
             </div>
 
             <ul className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
-              {stats.map((s) => (
-                <li key={s.value}>
+              {stats.map((s, index) => (
+            <li key={`${s.value}-${index}`}>
                   <div className="bg-card border-border-light shadow-light rounded-xl border p-5">
                     <div className="text-tagline text-2xl font-medium sm:text-[28px]">
                       {s.value}
@@ -84,8 +84,6 @@ export default function ThroughYears({
                 priority={false}
               />
             </div>
-
-            <div className="hidden md:block md:h-[220px]" />
           </div>
         </div>
       </div>

@@ -3,8 +3,73 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { DEFAULT_CONTACT_EMAIL } from "@/constants";
+import { strapiUrl } from "@/lib/utils";
+import type { Metadata } from "@/types/metadata";
+import type { StrapiResponse } from "@/types/strapi-response";
+import { keepPreviousData, useQuery } from "@tanstack/react-query";
+import qs from "qs";
+import { useState } from "react";
+
+const USE_MAIL_APP = true;
+
+const generateMailUrl = ({
+  contactEmail,
+  subject,
+  message,
+}: {
+  contactEmail: string;
+  subject: string;
+  message: string;
+}): string => {
+  const mailContent = qs.stringify({
+    subject: subject,
+    body: message,
+  });
+
+  return `mailto:${contactEmail}?${mailContent}`;
+};
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const { data: metadata } = useQuery<Metadata>({
+    queryKey: ["metadata"],
+    placeholderData: keepPreviousData,
+    staleTime: 1 * 60 * 1000, // 1 minutes
+    queryFn: async () => {
+      const res = await fetch(strapiUrl("/api/metadata?populate=*")!);
+      const json_req = (await res.json()) as StrapiResponse<Metadata>;
+
+      return json_req.data;
+    },
+  });
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    window.location.href = generateMailUrl({
+      contactEmail: metadata?.contactEmail ?? DEFAULT_CONTACT_EMAIL,
+      subject: formData.subject,
+      message: formData.message,
+    });
+  };
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    const { id, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [id]: value,
+    }));
+  };
+
   return (
     <section id="contact" className="bg-background relative px-6 lg:px-0">
       <div className="bg-features-hero pointer-events-none absolute inset-x-0 top-0 z-0 container h-[600px]" />
@@ -26,35 +91,45 @@ export default function Contact() {
               Speak to us
             </h3>
 
-            <form className="space-y-5">
-              <div>
-                <label
-                  htmlFor="fullName"
-                  className="text-muted-foreground mb-2 block text-sm"
-                >
-                  Full name
-                </label>
-                <Input
-                  id="fullName"
-                  placeholder="John Doe"
-                  className="h-11 rounded-lg"
-                />
-              </div>
+            <form className="space-y-5" onSubmit={handleSubmit}>
+              {!USE_MAIL_APP && (
+                <div>
+                  <label
+                    htmlFor="fullName"
+                    className="text-muted-foreground mb-2 block text-sm"
+                  >
+                    Full name
+                  </label>
+                  <Input
+                    id="fullName"
+                    value={formData.fullName}
+                    onChange={handleChange}
+                    placeholder="John Doe"
+                    className="h-11 rounded-lg"
+                    required
+                  />
+                </div>
+              )}
 
-              <div>
-                <label
-                  htmlFor="email"
-                  className="text-muted-foreground mb-2 block text-sm"
-                >
-                  Email
-                </label>
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="johndoe@mail.com"
-                  className="h-11 rounded-lg"
-                />
-              </div>
+              {!USE_MAIL_APP && (
+                <div>
+                  <label
+                    htmlFor="email"
+                    className="text-muted-foreground mb-2 block text-sm"
+                  >
+                    Email
+                  </label>
+                  <Input
+                    id="email"
+                    type="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="johndoe@mail.com"
+                    className="h-11 rounded-lg"
+                    required
+                  />
+                </div>
+              )}
 
               <div>
                 <label
@@ -65,8 +140,11 @@ export default function Contact() {
                 </label>
                 <Input
                   id="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
                   placeholder="Create a subject..."
                   className="h-11 rounded-lg"
+                  required
                 />
               </div>
 
@@ -79,8 +157,11 @@ export default function Contact() {
                 </label>
                 <Textarea
                   id="message"
+                  value={formData.message}
+                  onChange={handleChange}
                   placeholder="Enter your message..."
                   className="min-h-[150px] resize-y rounded-lg"
+                  required
                 />
               </div>
 

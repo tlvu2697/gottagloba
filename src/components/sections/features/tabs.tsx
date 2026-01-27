@@ -26,37 +26,37 @@ export type FeaturesTabsProps = {
 
 const DEFAULT_ITEMS: FeatureItem[] = [
   {
-    key: 'plan',
-    label: 'Plan Manager',
-    body: 'Track your subscription payment status in realtime, know about subscription details and download data. Plus, generate detailed reports to help you stay on top of your business.',
-    imageSrc: '/images/features/Frame.webp',
-    imageAlt: 'Sales report dashboard',
-    href: '/docs/dashboard',
-    buttonLabel: 'Learn more',
+    key: 'upward',
+    label: 'Upward Management',
+    body: 'Master high-level communication with superiors. Learn to manage pressure, handle conflict, command resources, and build executive presence through authentic workplace scenarios.',
+    imageSrc: '/images/features/upward-management.svg',
+    imageAlt: 'Upward management training',
+    href: '/pricing',
+    buttonLabel: 'Start Learning',
   },
   {
-    key: 'integrations',
-    label: 'Integrations',
-    body: 'Connect Gotta GLOBA to your stack with webhooks and SDKs. Sync events from billing to your CRM, data warehouse, and analytics tools.',
-    imageSrc: '/images/features/Frame.webp',
-    imageAlt: 'Integrations list',
-    href: '/integrations',
+    key: 'meetings',
+    label: 'Meetings with Confidence',
+    body: 'Speak with authority, defend strategically, and drive effective outcomes. Navigate meeting dynamics and tension like a seasoned professional in any international workplace.',
+    imageSrc: '/images/features/meetings-confidence.svg',
+    imageAlt: 'Meeting confidence training',
+    href: '/pricing',
   },
   {
-    key: 'dashboard',
-    label: 'Dashboard',
-    body: 'Embed a self-serve portal so customers can manage payment methods, invoices, and subscriptions—no support ticket needed.',
-    imageSrc: '/images/features/Frame.webp',
-    imageAlt: 'Customer portal screen',
-    href: '/docs/portal',
+    key: 'ielts',
+    label: 'IELTS Mastery',
+    body: 'Achieve your target IELTS score with structured practice and high-impact vocabulary. Get the results you need for higher education and global opportunities.',
+    imageSrc: '/images/features/ielts-mastery.svg',
+    imageAlt: 'IELTS preparation',
+    href: '/pricing',
   },
   {
-    key: 'portal',
-    label: 'Customer Portal',
-    body: 'Embed a self-serve portal so customers can manage payment methods, invoices, and subscriptions—no support ticket needed.',
-    imageSrc: '/images/features/Frame.webp',
-    imageAlt: 'Customer portal screen',
-    href: '/docs/portal',
+    key: 'workplace',
+    label: 'Workplace English',
+    body: 'Build professional fluency through shadowing drills, diverse accent challenges, and real career scenarios. Communicate confidently in any international workplace.',
+    imageSrc: '/images/features/workplace-english.svg',
+    imageAlt: 'Workplace English training',
+    href: '/pricing',
   },
 ];
 
@@ -79,9 +79,9 @@ function useLockedAspectHeight(aspect = 3 / 2) {
 }
 
 export default function FeaturesTabs({
-  tagline = 'For Developers',
-  title = 'Building Blocks for Recurring Billing',
-  description = 'Lay the foundation for recurring billing with comprehensive building blocks tailored to your needs.',
+  tagline = 'Learning Collections',
+  title = 'Everything You Need for a Global Career',
+  description = 'Master professional English through nano-skills training. From workplace communication to IELTS success - structured, effective, and ready for real-world application.',
   items = DEFAULT_ITEMS,
 }: FeaturesTabsProps) {
   const [active, setActive] = React.useState(items[0]?.key);

@@ -44,7 +44,6 @@ export default function Perks({
                 priority={false}
               />
             </div>
-            <div className="bg-accent hidden h-40 md:block" />
           </div>
 
           <div>

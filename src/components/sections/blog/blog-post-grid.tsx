@@ -110,7 +110,7 @@ export default function BlogPostGrid({
             Explore by topics
           </h3>
 
-          {/* Search — always visible */}
+          {/* Search - always visible */}
           <DebouncedInput
             type="search"
             value={query}
@@ -241,7 +241,7 @@ export default function BlogPostGrid({
                                 className="h-6 w-6 rounded-full object-cover"
                               />
                               <span className="text-xs">
-                                {author.firstName} {author.lastName}
+                                {author.displayName}
                               </span>
                               <span className="text-xs">•</span>
                             </>

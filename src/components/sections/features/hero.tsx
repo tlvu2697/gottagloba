@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { SOCIAL_URLS } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -16,14 +17,14 @@ type FeaturesHeroProps = {
 };
 
 export default function FeaturesHero({
-  overline = "Recurring Billing",
-  title = "Recurring Billing for Your Businesses",
-  description = `Simple recurring billing to usage-based billing and sales-negotiated contracts. Collect and retain more revenue, automate revenue management workflows, and accept payments globally.`,
-  primaryCtaHref = "/pricing",
-  primaryCtaLabel = "Get Started",
+  overline = "Professional English Training",
+  title = "Master English for\nGlobal Careers",
+  description = `From workplace communication to IELTS success - structured, effective practice that transforms ambitious self-improvers into confident international professionals.`,
+  primaryCtaHref = SOCIAL_URLS.youtube,
+  primaryCtaLabel = "Start Learning",
   secondaryCtaHref = "/contact",
-  secondaryCtaLabel = "Contact Sales",
-  imageSrc = "/images/features/feature.webp",
+  secondaryCtaLabel = "Learn More",
+  imageSrc = "/images/features/hero-illustration.svg",
 }: FeaturesHeroProps) {
   return (
     <section id="features-hero" className="bg-background px-6 lg:px-0">
@@ -62,7 +63,7 @@ export default function FeaturesHero({
               <div className="border-border-light shadow-soft relative aspect-[10/9] w-full max-w-[1000px] overflow-hidden rounded-[16px] border bg-white lg:w-[500px]">
                 <Image
                   src={imageSrc}
-                  alt="Pricing plans UI preview"
+                  alt="Gotta GLOBA learning journey - from workplace English to global career success"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 500px"

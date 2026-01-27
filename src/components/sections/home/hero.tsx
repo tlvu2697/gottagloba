@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { GridBackground } from "@/components/ui/grid-background";
+import { SOCIAL_URLS } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -26,7 +27,8 @@ const Hero = () => {
       <div className="relative container px-0 md:px-6">
         <div className="mx-auto grid max-w-4xl gap-6 py-14 text-center sm:py-16 md:gap-8 md:pt-24 md:pb-20">
           <h1 className="text-foreground text-4xl leading-tight font-medium tracking-tight text-balance sm:text-5xl md:text-[56px]">
-            Global-scale career is no longer a distant dream
+            Global-scale Career
+            <br className="hidden sm:block" /> is no longer a distant dream
           </h1>
           <p className="text-muted-foreground md:text-md mx-auto max-w-2xl text-base sm:text-lg">
             The world offers a wind full of opportunity and risk that we
@@ -40,9 +42,7 @@ const Hero = () => {
               className="w-full sm:w-auto"
               aria-label="Get started"
             >
-              <Link href="https://www.youtube.com/@GottaGLOBA?sub_confirmation=1">
-                Get Started
-              </Link>
+              <Link href={SOCIAL_URLS.youtube}>Get Started</Link>
             </Button>
             <Button
               asChild
@@ -54,17 +54,17 @@ const Hero = () => {
             </Button>
           </div>
         </div>
-        <div className="mx-auto flex w-full max-w-[994px] items-center justify-center rounded-t-2xl bg-white/20 shadow-[0_15px_80px_-1px_rgba(8,9,10,0.04)] backdrop-blur-[20px]">
-          <Image
-            src="/images/homepage/hero/Dashboard.webp"
-            alt="Dashboard preview"
-            width={994}
-            height={707}
-            priority
-            sizes="(max-width: 1024px) 100vw, 994px"
-            className="h-auto w-full rounded-t-2xl object-cover object-top"
-          />
-        </div>
+        {/* <div className="mx-auto flex w-full max-w-[994px] items-center justify-center rounded-t-2xl bg-white/20 shadow-[0_15px_80px_-1px_rgba(8,9,10,0.04)] backdrop-blur-[20px]"> */}
+        {/*   <Image */}
+        {/*     src="/images/homepage/hero/Dashboard.webp" */}
+        {/*     alt="Dashboard preview" */}
+        {/*     width={994} */}
+        {/*     height={707} */}
+        {/*     priority */}
+        {/*     sizes="(max-width: 1024px) 100vw, 994px" */}
+        {/*     className="h-auto w-full rounded-t-2xl object-cover object-top" */}
+        {/*   /> */}
+        {/* </div> */}
       </div>
     </section>
   );

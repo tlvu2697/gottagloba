@@ -1,9 +1,10 @@
 "use client";
 
-import type { GetBlogPostsResponse } from "@/app/blog/type";
-import BlogPost from "@/components/sections/blog/blog-post";
+import { default as BlogPostSection } from "@/components/sections/blog/blog-post";
 import SpinnerApplication from "@/components/spinner-application";
 import { strapiUrl } from "@/lib/utils";
+import type { BlogPost } from "@/types/blog-post";
+import type { StrapiResponse } from "@/types/strapi-response";
 import { useQuery } from "@tanstack/react-query";
 import { notFound, useParams } from "next/navigation";
 import qs from "qs";
@@ -13,7 +14,7 @@ import rehypeRaw from "rehype-raw";
 import rehypeSanitize from "rehype-sanitize";
 import remarkGfm from "remark-gfm";
 
-const fetchBlogPost = async (slug: string): Promise<GetBlogPostsResponse> => {
+const fetchBlogPost = async (slug: string): Promise<BlogPost | null> => {
   const query = qs.stringify({
     sort: "publishedAt:desc",
     filters: {
@@ -25,16 +26,17 @@ const fetchBlogPost = async (slug: string): Promise<GetBlogPostsResponse> => {
   });
 
   const res = await fetch(strapiUrl(`/api/blog-posts?${query}`)!);
-  return (await res.json()) as GetBlogPostsResponse;
+  const json_res = (await res.json()) as StrapiResponse<BlogPost[]>;
+
+  return json_res.data[0] ?? null;
 };
 
 const Page = () => {
   const { slug }: { slug: string } = useParams();
-  const { data: apiData, isLoading } = useQuery<GetBlogPostsResponse>({
+  const { data: blogPost, isLoading } = useQuery<BlogPost | null>({
     queryKey: ["blog-posts", slug],
     queryFn: () => fetchBlogPost(slug),
   });
-  const blogPost = apiData?.data[0];
 
   if (isLoading) {
     return <SpinnerApplication />;
@@ -48,12 +50,12 @@ const Page = () => {
   const category = blogPostCategories[0];
 
   return (
-    <BlogPost
+    <BlogPostSection
       tagline={category?.name}
       title={title}
       intro={summary}
       image={image}
-      author={`${author?.firstName} ${author?.lastName}`}
+      author={`${author?.displayName}`}
       avatar={author?.avatar}
       published={date}
     >
@@ -63,7 +65,7 @@ const Page = () => {
       >
         {content}
       </ReactMarkdown>
-    </BlogPost>
+    </BlogPostSection>
   );
 };
 

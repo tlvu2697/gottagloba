@@ -16,11 +16,24 @@ type CareersHeroProps = {
 
 export default function CareersHero({
   overline = "Careers",
-  title = "Join The Future of Financial Platform",
-  description = "Hendrerit fames metus leo ut orci pretium. Sit vitae montes egestas montes mauris. Auctor vitae neque urna nam nunc pellentesque.",
-  primaryCtaHref = "#",
+  title = "Join Us in Empowering Global Careers",
+  description = "Be part of a team dedicated to helping ambitious professionals achieve their dreams of global-scale careers.",
+  primaryCtaHref = "#job-openings",
   primaryCtaLabel = "See Job Openings",
 }: CareersHeroProps) {
+  const handleScrollToSection = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    const targetId = primaryCtaHref.replace("#", "");
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   return (
     <section id="careers-hero" className="bg-background px-6 lg:px-0">
       <div className="container px-0 md:px-6">
@@ -32,13 +45,13 @@ export default function CareersHero({
               {title}
             </h1>
 
-            <p className="text-muted-foreground mx-auto mt-5 max-w-2xl text-base sm:text-lg">
+            <p className="text-muted-foreground mx-auto mt-5 max-w-2xl text-base whitespace-pre-line sm:text-lg">
               {description}
             </p>
 
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-              <Button asChild>
-                <Link href={primaryCtaHref}>{primaryCtaLabel}</Link>
+              <Button onClick={handleScrollToSection}>
+                {primaryCtaLabel}
               </Button>
             </div>
           </div>

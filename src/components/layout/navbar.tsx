@@ -1,7 +1,9 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { SOCIAL_URLS } from "@/constants";
 import { cn } from "@/lib/utils";
+import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -13,6 +15,7 @@ const HEADER_HEIGHT = 80;
 const Navbar = () => {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { resolvedTheme } = useTheme();
 
   useEffect(() => {
     document.body.classList.toggle("overflow-hidden", isMenuOpen);
@@ -67,11 +70,11 @@ const Navbar = () => {
   }, [isMenuOpen, panelHeight]);
 
   const ITEMS = [
-    { label: "Features", href: "/features" },
-    { label: "Integrations", href: "/integrations" },
-    { label: "About Us", href: "/about" },
-    { label: "Pricing", href: "/pricing" },
     { label: "Blog", href: "/blog" },
+    { label: "Features", href: "/features" },
+    // { label: "Integrations", href: "/integrations" },
+    { label: "About Us", href: "/about" },
+    // { label: "Pricing", href: "/pricing" },
     { label: "Contact", href: "/contact" },
   ];
 
@@ -80,11 +83,14 @@ const Navbar = () => {
       <div className="container flex h-20 items-center justify-between lg:grid lg:grid-cols-[auto_1fr_auto]">
         <Link href="/" className="flex items-center gap-2">
           <Image
-            src="/images/layout/logo.svg"
+            src={
+              resolvedTheme === "dark"
+                ? "/images/layout/logo-invert.svg"
+                : "/images/layout/logo.svg"
+            }
             alt="Gotta GLOBA"
             width={129}
             height={32}
-            className="invert-0 dark:invert"
             priority
           />
         </Link>
@@ -105,12 +111,15 @@ const Navbar = () => {
         </nav>
 
         <div className="flex items-center gap-2.5">
-          <Link href="/login" className={cn("hidden sm:block lg:block")}>
-            <Button size="sm" variant="outline">
-              Login
-            </Button>
-          </Link>
-          <Link href="/pricing" className={cn("hidden sm:block lg:block")}>
+          {/* <Link href="/login" className={cn("hidden sm:block lg:block")}> */}
+          {/*   <Button size="sm" variant="outline"> */}
+          {/*     Login */}
+          {/*   </Button> */}
+          {/* </Link> */}
+          <Link
+            href={SOCIAL_URLS.youtube}
+            className={cn("hidden sm:block lg:block")}
+          >
             <Button size="sm" variant="default">
               Get Started
             </Button>
@@ -206,12 +215,15 @@ const Navbar = () => {
                   </div>
 
                   <div className="mt-4 mb-6 flex flex-col gap-3">
-                    <Link href="/login" onClick={() => setIsMenuOpen(false)}>
-                      <Button className="w-full" size="sm" variant="outline">
-                        Login
-                      </Button>
-                    </Link>
-                    <Link href="/pricing" onClick={() => setIsMenuOpen(false)}>
+                    {/* <Link href="/login" onClick={() => setIsMenuOpen(false)}> */}
+                    {/*   <Button className="w-full" size="sm" variant="outline"> */}
+                    {/*     Login */}
+                    {/*   </Button> */}
+                    {/* </Link> */}
+                    <Link
+                      href={SOCIAL_URLS.youtube}
+                      onClick={() => setIsMenuOpen(false)}
+                    >
                       <Button className="w-full" size="sm" variant="default">
                         Get Started
                       </Button>

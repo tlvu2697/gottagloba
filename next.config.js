@@ -10,9 +10,8 @@ const config = {
   images: {
     remotePatterns: [
       {
-        protocol: "http",
-        hostname: "localhost",
-        port: "1337",
+        protocol: "https",
+        hostname: "*.media.strapiapp.com",
         pathname: "/**",
       },
     ],

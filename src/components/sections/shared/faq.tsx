@@ -7,23 +7,25 @@ type QA = { question: string; answer: string };
 
 const FAQS: QA[] = [
   {
-    question: "How can I send one-time or recurring invoices to customers?",
+    question: "What is Gotta GLOBA and who is it for?",
     answer:
-      "Gotta GLOBA Billing lets you create both one-time and recurring invoices. You can generate payment links or embed checkout forms directly on your site, making it easy for customers to pay securely without extra setup.",
+      "Gotta GLOBA is a professional training platform dedicated to busy yet ambitious self-improvers who want to build a global-scale career. We help you speak English confidently in international workplaces and achieve high IELTS scores for higher education. Our structured and effective practice turns your hard work into real progress.",
   },
   {
-    question: "How do I create and send an invoice using Gotta GLOBA Billing?",
-    answer: `To create an invoice:\n1. Log in to your Gotta GLOBA Billing dashboard.\n2. Open the "Invoices" section and select **Create New Invoice**.\n3. Add client details, invoice date, and line items.\n4. Review everything, then click **Send** to email the invoice directly to your customer.`,
+    question: "How does Gotta GLOBA's learning method work?",
+    answer:
+      "We focus on Nano-Skills through authentic workplace scenarios, shadowing drills, diverse accent challenges, and workplace advanced vocabulary. Our courses include collections like Upward Management (managing pressure, handling conflict, commanding resources) and Meetings with Confidence (speaking with authority, defending strategically, handling meeting dynamics).",
   },
   {
-    question: "How do I mark an invoice as paid outside of Gotta GLOBA?",
+    question:
+      "What makes Gotta GLOBA different from other English learning platforms?",
     answer:
-      'If you receive payment through another channel—such as a bank transfer or cash—you can mark the invoice as paid manually. Open the invoice, choose **Mark as Paid**, select "Out of band", and record any payment reference or note for accurate reconciliation.',
+      "Unlike traditional language courses, we focus on career-scenario virtual simulations and real workplace communication skills. You'll learn how to disagree respectfully with superiors, negotiate tasks without looking lazy, and master high-level communication that matters in international professional environments. We combine language learning with career advancement strategies.",
   },
   {
-    question: "How can I calculate my trial conversion rate in Billing?",
+    question: "Do I need to have advanced English skills to start?",
     answer:
-      "In your Billing dashboard, open **Analytics**, then select the **Funnels** tab and choose **Trials**. The report shows how many customers started a trial and how many converted to paid plans. You can filter results by date range and export them for further analysis.",
+      "While we focus on professional English for the workplace, our courses are designed for ambitious learners at various levels. If you're serious about advancing your global career and willing to put in structured practice, our step-by-step approach will help you build from your current level to workplace fluency and IELTS success.",
   },
 ];
 
@@ -150,8 +152,8 @@ export default function Faq() {
         </h2>
 
         <p className="text-muted-foreground mx-auto max-w-2xl text-center text-base font-normal sm:text-lg">
-          Hendrerit fames metus leo ut orci pretium. Sit vitae montes egestas
-          montes mauris. Auctor vitae neque urna nam nunc pellentesque.
+          Learn how Gotta GLOBA helps you master professional English, ace
+          IELTS, and build the communication skills for a global career.
         </p>
 
         <div className="mx-auto mt-10 flex max-w-3xl flex-col gap-4 sm:mt-14">

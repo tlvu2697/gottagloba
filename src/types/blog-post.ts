@@ -1,3 +1,4 @@
+import type { Member } from "@/types/member";
 import type { StrapiImage } from "@/types/strapi-image";
 
 export type BlogPostCategory = {
@@ -8,18 +9,6 @@ export type BlogPostCategory = {
   createdAt: string;
   updatedAt: string;
   publishedAt: string;
-}
-
-export type Author = {
-  id: number;
-  documentId: string;
-  firstName: string;
-  lastName: string;
-  createdAt: string;
-  updatedAt: string;
-  publishedAt: string;
-  slug: string;
-  avatar: StrapiImage;
 }
 
 export type BlogPost = {
@@ -37,5 +26,5 @@ export type BlogPost = {
   updatedAt: string;
   publishedAt: string;
   blogPostCategories: BlogPostCategory[];
-  authors: Author[];
+  authors: Member[];
 }

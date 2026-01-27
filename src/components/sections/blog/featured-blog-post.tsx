@@ -41,7 +41,7 @@ export default function FeaturedBlogPost({ blogPost }: { blogPost: BlogPost }) {
                           className="h-7 w-7 rounded-full object-cover"
                         />
                         <span className="text-sm">
-                          {author.firstName} {author.lastName}
+                          {author.displayName}
                         </span>
                       </>
                     )}

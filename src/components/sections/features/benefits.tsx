@@ -11,25 +11,25 @@ type Benefit = {
 
 const BENEFITS: Benefit[] = [
   {
-    title: "Collect More Revenue",
+    title: "Nano-Skills Training",
     description:
-      "Maximize revenue collection with efficient strategies and streamlined processes.",
-    iconSrc: "/images/features/bar.svg",
-    iconAlt: "Bar chart icon",
+      "Break down complex workplace communication into bite-sized, actionable skills you can master step by step.",
+    iconSrc: "/images/features/nano-skills.svg",
+    iconAlt: "Progressive learning steps icon",
   },
   {
-    title: "Realtime Notifications",
+    title: "Authentic Scenarios",
     description:
-      "Receive instant notifications in real-time for prompt updates and timely responses.",
-    iconSrc: "/images/features/bell.svg",
-    iconAlt: "Notification bell icon",
+      "Practice with real workplace situations - from upward management to navigating difficult conversations with confidence.",
+    iconSrc: "/images/features/authentic-scenarios.svg",
+    iconAlt: "Workplace conversation icon",
   },
   {
-    title: "Easy Management",
+    title: "Structured Practice",
     description:
-      "Get realtime updates when users start or end subscriptions, or have low funds in their wallet.",
-    iconSrc: "/images/features/server.svg",
-    iconAlt: "Controls icon",
+      "Follow a proven learning path with shadowing drills, diverse accent challenges, and workplace vocabulary that actually works.",
+    iconSrc: "/images/features/structured-practice.svg",
+    iconAlt: "Learning path with checkpoints icon",
   },
 ];
 

@@ -9,8 +9,8 @@ type MissionProps = {
 
 export default function Mission({
   overline = "Our Mission",
-  primary = `At Gotta GLOBA, we're building the place to pay for today's businesses.`,
-  secondary = `Our mission is to build the first premium payment platform for everyone.`,
+  primary = "At Gotta GLOBA, we transform language barriers into bridges.",
+  secondary = "Our mission is to help professionals  secure the promotions and global careers they deserve.",
   showDivider = true,
 }: MissionProps) {
   return (
@@ -18,9 +18,12 @@ export default function Mission({
       <div className="container px-0 py-12 sm:py-16 md:px-6 md:py-20">
         <p className="text-tagline text-sm sm:text-base">{overline}</p>
 
-        <h2 className="text-foreground mt-4 text-3xl leading-[1.1] font-medium tracking-tight text-balance sm:text-5xl md:text-[56px]">
-          <span>{primary} </span>
-          <span className="text-muted-foreground">{secondary}</span>
+        <h2 className="text-foreground mt-4 text-3xl leading-[1.1] font-medium tracking-tight text-balance md:text-5xl">
+          <span className="whitespace-pre-line">{primary}</span>
+          <br />
+          <span className="text-muted-foreground whitespace-pre-line">
+            {secondary}
+          </span>
         </h2>
 
         {showDivider && (

@@ -1,6 +1,6 @@
-import Link from "next/link";
-
 import { Button } from "@/components/ui/button";
+import { SOCIAL_URLS } from "@/constants";
+import Link from "next/link";
 
 const Cta = () => {
   return (
@@ -13,8 +13,8 @@ const Cta = () => {
 
       <div className="relative container px-0 py-16 text-center sm:py-20 md:px-6 md:py-28">
         <h2 className="text-primary-foreground mx-auto max-w-5xl text-4xl leading-tight font-medium text-balance sm:text-5xl md:text-6xl">
-          Simplifying Payments
-          <br className="hidden sm:block" /> for Growing Business
+          Global-scale Career
+          <br className="hidden sm:block" /> is no longer a distant dream
         </h2>
 
         <p className="text-primary-foreground/80 mx-auto mt-4 max-w-2xl text-base font-normal sm:text-lg">
@@ -27,7 +27,7 @@ const Cta = () => {
             asChild
             className="bg-primary-foreground text-tagline hover:bg-primary-foreground/90 h-12 w-full rounded-xl sm:w-auto"
           >
-            <Link href="/pricing">Get Started</Link>
+            <Link href={SOCIAL_URLS.youtube}>Get Started</Link>
           </Button>
 
           {/* Transparent button */}

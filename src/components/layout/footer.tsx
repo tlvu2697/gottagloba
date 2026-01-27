@@ -1,16 +1,17 @@
-import { Facebook, Linkedin, Twitter } from "lucide-react";
+import { SOCIAL_URLS } from "@/constants";
+import { Facebook, Linkedin, Youtube } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 const columns = [
-  {
-    title: "Product",
-    links: [
-      { name: "Features", href: "/features" },
-      { name: "Integrations", href: "/integrations" },
-      { name: "Pricing", href: "/pricing" },
-    ],
-  },
+  // {
+  //   title: "Product",
+  //   links: [
+  //     { name: "Features", href: "/features" },
+  //     { name: "Integrations", href: "/integrations" },
+  //     { name: "Pricing", href: "/pricing" },
+  //   ],
+  // },
   {
     title: "Company",
     links: [
@@ -26,16 +27,16 @@ const columns = [
       { name: "Privacy Policy", href: "/privacy" },
       { name: "Terms of Service", href: "/terms" },
       { name: "Cookie Policy", href: "/cookie-policy" },
-      { name: "Sign Up", href: "/signup" },
-      { name: "Login", href: "/login" },
+      // { name: "Sign Up", href: "/signup" },
+      // { name: "Login", href: "/login" },
     ],
   },
 ];
 
 const socials = [
-  { Icon: Linkedin, href: "https://linkedin.com" },
-  { Icon: Twitter, href: "https://twitter.com" },
-  { Icon: Facebook, href: "https://facebook.com" },
+  { Icon: Youtube, href: SOCIAL_URLS.youtube },
+  { Icon: Linkedin, href: SOCIAL_URLS.linkedin },
+  { Icon: Facebook, href: SOCIAL_URLS.facebook },
 ];
 
 export const Footer = () => {
@@ -46,11 +47,10 @@ export const Footer = () => {
           <div className="md:min-w-[140px]">
             <Link href="/" aria-label="Gotta GLOBA">
               <Image
-                src="/images/layout/logo.svg"
+                src="/images/layout/logo-invert.svg"
                 alt="Gotta GLOBA"
                 width={140}
                 height={32}
-                className="invert"
               />
             </Link>
           </div>

@@ -1,0 +1,28 @@
+<svg width="600" height="400" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="600" height="400" fill="#f8fafb"/>
+
+  <!-- Main card - Managing Pressure -->
+  <rect x="60" y="80" width="280" height="120" rx="16" fill="#3a5e96"/>
+  <text x="200" y="125" font-family="system-ui, -apple-system" font-size="22" font-weight="600" fill="#ffffff" text-anchor="middle">Managing Pressure</text>
+  <text x="200" y="155" font-family="system-ui, -apple-system" font-size="14" fill="#ffffff" opacity="0.9" text-anchor="middle">Navigate high-stakes conversations</text>
+  <text x="200" y="175" font-family="system-ui, -apple-system" font-size="14" fill="#ffffff" opacity="0.9" text-anchor="middle">with confidence and clarity</text>
+
+  <!-- Accent card - Handling Conflict -->
+  <rect x="360" y="120" width="180" height="100" rx="12" fill="#fdbf65"/>
+  <text x="450" y="160" font-family="system-ui, -apple-system" font-size="18" font-weight="600" fill="#2f2b43" text-anchor="middle">Handling Conflict</text>
+  <text x="450" y="185" font-family="system-ui, -apple-system" font-size="12" fill="#2f2b43" opacity="0.8" text-anchor="middle">Disagree respectfully</text>
+
+  <!-- Bottom elements -->
+  <rect x="60" y="230" width="220" height="80" rx="12" fill="#3a5e96" opacity="0.15"/>
+  <text x="170" y="275" font-family="system-ui, -apple-system" font-size="16" font-weight="500" fill="#3a5e96" text-anchor="middle">Executive Presence</text>
+
+  <rect x="300" y="230" width="240" height="80" rx="12" fill="#fdbf65" opacity="0.2"/>
+  <text x="420" y="275" font-family="system-ui, -apple-system" font-size="16" font-weight="500" fill="#2f2b43" text-anchor="middle">Command Resources</text>
+
+  <!-- Decorative elements -->
+  <circle cx="100" cy="340" r="8" fill="#3a5e96" opacity="0.3"/>
+  <circle cx="130" cy="350" r="6" fill="#3a5e96" opacity="0.2"/>
+  <circle cx="500" cy="340" r="10" fill="#fdbf65" opacity="0.3"/>
+  <circle cx="470" cy="350" r="7" fill="#fdbf65" opacity="0.2"/>
+</svg>

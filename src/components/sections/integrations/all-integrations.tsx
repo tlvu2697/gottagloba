@@ -23,7 +23,7 @@ const DEFAULT_ITEMS: Integration[] = [
   {
     name: "Zapier integration",
     description:
-      "Connect Apps and Automate Workflows with Zapier — No Coding Required.",
+      "Connect Apps and Automate Workflows with Zapier - No Coding Required.",
     icon: "/images/homepage/integrations/zapier.svg",
     href: "#",
   },

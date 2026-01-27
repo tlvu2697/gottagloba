@@ -1,0 +1,127 @@
+<svg width="600" height="540" viewBox="0 0 600 540" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <clipPath id="balloon-a26800d90b"><path d="M 5 3.152344 L 96.382812 3.152344 L 96.382812 182.460938 L 5 182.460938 Z M 5 3.152344 " clip-rule="nonzero"/></clipPath>
+    <clipPath id="balloon-13e10e3a05"><path d="M 96.648438 3.152344 L 188 3.152344 L 188 182.460938 L 96.648438 182.460938 Z M 96.648438 3.152344 " clip-rule="nonzero"/></clipPath>
+    <clipPath id="balloon-dde759907d"><path d="M 0.90625 0.492188 L 91.914062 0.492188 L 91.914062 179.460938 L 0.90625 179.460938 Z M 0.90625 0.492188 " clip-rule="nonzero"/></clipPath>
+    <clipPath id="balloon-66ee138ec3"><rect x="0" width="92" y="0" height="180"/></clipPath>
+    <clipPath id="balloon-93f5e616eb"><path d="M 0 87 L 193.503906 87 L 193.503906 99 L 0 99 Z M 0 87 " clip-rule="nonzero"/></clipPath>
+    <clipPath id="balloon-1a34b39ba4"><path d="M 85.117188 206.257812 L 122.574219 206.257812 L 122.574219 245.027344 L 85.117188 245.027344 Z M 85.117188 206.257812 " clip-rule="nonzero"/></clipPath>
+    <clipPath id="balloon-963d88e92d"><path d="M 103.847656 245.027344 C 114.191406 245.027344 122.574219 236.371094 122.574219 225.695312 C 122.574219 215.015625 114.191406 206.359375 103.847656 206.359375 C 93.503906 206.359375 85.117188 215.015625 85.117188 225.695312 C 85.117188 236.371094 93.503906 245.027344 103.847656 245.027344 Z M 103.847656 245.027344 " clip-rule="nonzero"/></clipPath>
+    <clipPath id="balloon-ff364eadef"><path d="M 0.117188 0.316406 L 37.574219 0.316406 L 37.574219 39.027344 L 0.117188 39.027344 Z M 0.117188 0.316406 " clip-rule="nonzero"/></clipPath>
+    <clipPath id="balloon-270a18290f"><path d="M 18.847656 39.027344 C 29.191406 39.027344 37.574219 30.371094 37.574219 19.695312 C 37.574219 9.015625 29.191406 0.359375 18.847656 0.359375 C 8.503906 0.359375 0.117188 9.015625 0.117188 19.695312 C 0.117188 30.371094 8.503906 39.027344 18.847656 39.027344 Z M 18.847656 39.027344 " clip-rule="nonzero"/></clipPath>
+    <clipPath id="balloon-f35185c45e"><rect x="0" width="38" y="0" height="40"/></clipPath>
+    <clipPath id="balloon-e9f0000217"><path d="M 77.410156 0.472656 L 130.28125 0.472656 L 130.28125 185.097656 L 77.410156 185.097656 Z M 77.410156 0.472656 " clip-rule="nonzero"/></clipPath>
+    <clipPath id="balloon-4cc14f242c"><path d="M 130.28125 145.363281 C 130.28125 167.292969 118.445312 185.070312 103.84375 185.070312 C 89.246094 185.070312 77.410156 167.292969 77.410156 145.363281 L 77.410156 40.175781 C 77.410156 18.246094 89.246094 0.46875 103.84375 0.46875 C 118.445312 0.46875 130.28125 18.246094 130.28125 40.175781 Z M 130.28125 145.363281 " clip-rule="nonzero"/></clipPath>
+    <clipPath id="balloon-37e67e355d"><path d="M 0.410156 0.472656 L 53.28125 0.472656 L 53.28125 185.097656 L 0.410156 185.097656 Z M 0.410156 0.472656 " clip-rule="nonzero"/></clipPath>
+    <clipPath id="balloon-15a0a62d3d"><path d="M 53.28125 145.363281 C 53.28125 167.292969 41.445312 185.070312 26.84375 185.070312 C 12.246094 185.070312 0.410156 167.292969 0.410156 145.363281 L 0.410156 40.175781 C 0.410156 18.246094 12.246094 0.46875 26.84375 0.46875 C 41.445312 0.46875 53.28125 18.246094 53.28125 40.175781 Z M 53.28125 145.363281 " clip-rule="nonzero"/></clipPath>
+    <clipPath id="balloon-5468430235"><rect x="0" width="54" y="0" height="186"/></clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="540" fill="#ffffff"/>
+
+  <!-- Hot Air Balloon Logo - Gotta GLOBA -->
+  <g transform="translate(145, 20) scale(0.75)">
+    <!-- Left half (blue) -->
+    <g clip-path="url(#balloon-a26800d90b)">
+      <path fill="#3a5e96" d="M 96.554688 3.492188 L 96.554688 182.460938 C 64.636719 181.679688 39.066406 169.378906 21.617188 143.097656 C 1.179688 112.308594 0.105469 79.726562 18.625 47.796875 C 35.535156 18.640625 62.1875 4.75 96.550781 3.488281 Z M 96.554688 3.492188 " fill-opacity="1" fill-rule="nonzero"/>
+    </g>
+
+    <!-- Right half (green) -->
+    <g clip-path="url(#balloon-13e10e3a05)">
+      <g transform="translate(96, 3)">
+        <g clip-path="url(#balloon-66ee138ec3)">
+          <g clip-path="url(#balloon-dde759907d)">
+            <path fill="#56b48c" d="M 0.734375 179.460938 L 0.734375 0.492188 C 32.652344 1.269531 58.21875 13.570312 75.671875 39.855469 C 96.109375 70.644531 97.179688 103.226562 78.664062 135.152344 C 61.75 164.308594 35.097656 178.203125 0.738281 179.464844 Z M 0.734375 179.460938 " fill-opacity="1" fill-rule="nonzero"/>
+          </g>
+        </g>
+      </g>
+    </g>
+
+    <!-- White horizontal line -->
+    <g clip-path="url(#balloon-93f5e616eb)">
+      <path stroke-linecap="butt" transform="matrix(-0.747115, 0, 0, -0.747115, 193.281078, 98.957062)" fill="none" stroke-linejoin="miter" d="M -0.000230583 7.999559 L 258.713583 7.999559 " stroke="#ffffff" stroke-width="16" stroke-opacity="1" stroke-miterlimit="4"/>
+    </g>
+
+    <!-- Orange vertical line -->
+    <path stroke-linecap="butt" transform="matrix(0, 0.747115, -0.747115, 0, 104.5985, 182.467324)" fill="none" stroke-linejoin="miter" d="M 0.00190899 0.999761 C 12.628599 0.999761 23.174368 0.999761 31.62876 0.999761 " stroke="#e76835" stroke-width="2" stroke-opacity="1" stroke-miterlimit="4"/>
+
+    <!-- Gold circle at bottom -->
+    <g clip-path="url(#balloon-1a34b39ba4)">
+      <g clip-path="url(#balloon-963d88e92d)">
+        <g transform="translate(85, 206)">
+          <g clip-path="url(#balloon-f35185c45e)">
+            <g clip-path="url(#balloon-ff364eadef)">
+              <g clip-path="url(#balloon-270a18290f)">
+                <path fill="#fdbf65" d="M 37.574219 39.027344 L 0.117188 39.027344 L 0.117188 0.402344 L 37.574219 0.402344 Z M 37.574219 39.027344 " fill-opacity="1" fill-rule="nonzero"/>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+
+    <!-- White background shapes for proper rendering -->
+    <g clip-path="url(#balloon-e9f0000217)">
+      <g clip-path="url(#balloon-4cc14f242c)">
+        <g transform="translate(77, 0)">
+          <g clip-path="url(#balloon-5468430235)">
+            <g clip-path="url(#balloon-37e67e355d)">
+              <g clip-path="url(#balloon-15a0a62d3d)">
+                <path fill="#ffffff" d="M 53.28125 0.46875 L 53.28125 185.097656 L 0.410156 185.097656 L 0.410156 0.46875 Z M 53.28125 0.46875 " fill-opacity="1" fill-rule="nonzero"/>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- Rising trajectory path with milestones -->
+  <path d="M 100 450 Q 140 415 180 380 Q 260 300 340 260 Q 420 200 500 140" stroke="#fdbf65" stroke-width="3" stroke-dasharray="8 4" fill="none" opacity="0.6"/>
+
+  <!-- Wind lines showing upward movement -->
+  <path d="M 50 320 Q 80 310 110 320" stroke="#3a5e96" stroke-width="2" stroke-linecap="round" opacity="0.2"/>
+  <path d="M 60 340 Q 95 328 130 340" stroke="#3a5e96" stroke-width="2" stroke-linecap="round" opacity="0.2"/>
+  <path d="M 40 360 Q 75 348 110 360" stroke="#3a5e96" stroke-width="2" stroke-linecap="round" opacity="0.2"/>
+
+  <!-- Decorative elements - stars representing ambition -->
+  <path d="M 520 200 L 524 208 L 532 208 L 526 214 L 528 222 L 520 218 L 512 222 L 514 214 L 508 208 L 516 208 Z" fill="#fdbf65" opacity="0.4"/>
+  <path d="M 80 150 L 83 156 L 89 156 L 84 160 L 86 166 L 80 163 L 74 166 L 76 160 L 71 156 L 77 156 Z" fill="#fdbf65" opacity="0.4"/>
+  <path d="M 550 350 L 553 356 L 559 356 L 554 360 L 556 366 L 550 363 L 544 366 L 546 360 L 541 356 L 547 356 Z" fill="#3a5e96" opacity="0.3"/>
+
+  <!-- Milestone 1: Workplace English - Briefcase Icon -->
+  <circle cx="180" cy="380" r="30" fill="#3a5e96"/>
+  <rect x="167" y="372" width="26" height="18" rx="2" fill="#ffffff" stroke="#ffffff" stroke-width="1.5"/>
+  <rect x="177" y="368" width="6" height="6" fill="#ffffff"/>
+  <rect x="120" y="420" width="120" height="50" rx="8" fill="#d1d8e0"/>
+  <text x="180" y="443" font-family="system-ui, -apple-system" font-size="13" font-weight="600" fill="#3a5e96" text-anchor="middle">Workplace</text>
+  <text x="180" y="458" font-family="system-ui, -apple-system" font-size="13" font-weight="600" fill="#3a5e96" text-anchor="middle">English</text>
+
+  <!-- Milestone 2: IELTS Success - Graduation Cap Icon -->
+  <circle cx="340" cy="260" r="30" fill="#fdbf65"/>
+  <path d="M 340 248 L 328 253 L 328 258 L 340 263 L 352 258 L 352 253 Z" fill="#2f2b43"/>
+  <rect x="338" y="263" width="4" height="8" fill="#2f2b43"/>
+  <path d="M 324 253 L 340 246 L 356 253" stroke="#2f2b43" stroke-width="2" fill="none"/>
+  <rect x="280" y="300" width="120" height="35" rx="8" fill="#fef3d8"/>
+  <text x="340" y="322" font-family="system-ui, -apple-system" font-size="13" font-weight="600" fill="#2f2b43" text-anchor="middle">IELTS 8.0+</text>
+
+  <!-- Milestone 3: Global Career - Globe Icon -->
+  <circle cx="500" cy="140" r="30" fill="#10b981"/>
+  <circle cx="500" cy="140" r="15" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+  <ellipse cx="500" cy="140" rx="15" ry="6" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+  <line x1="500" y1="125" x2="500" y2="155" stroke="#ffffff" stroke-width="2.5"/>
+  <rect x="430" y="50" width="140" height="50" rx="8" fill="#d1f4e5"/>
+  <text x="500" y="73" font-family="system-ui, -apple-system" font-size="14" font-weight="600" fill="#10b981" text-anchor="middle">Global Career</text>
+  <text x="500" y="89" font-family="system-ui, -apple-system" font-size="14" font-weight="600" fill="#10b981" text-anchor="middle">Ready!</text>
+
+  <!-- Key Features at bottom -->
+  <rect x="40" y="480" width="160" height="45" rx="8" fill="#3a5e96" opacity="0.2"/>
+  <text x="120" y="507" font-family="system-ui, -apple-system" font-size="14" font-weight="600" fill="#3a5e96" text-anchor="middle">Structured Practice</text>
+
+  <rect x="220" y="480" width="160" height="45" rx="8" fill="#fdbf65" opacity="0.3"/>
+  <text x="300" y="507" font-family="system-ui, -apple-system" font-size="14" font-weight="600" fill="#2f2b43" text-anchor="middle">Real Scenarios</text>
+
+  <rect x="400" y="480" width="160" height="45" rx="8" fill="#3a5e96" opacity="0.2"/>
+  <text x="480" y="507" font-family="system-ui, -apple-system" font-size="14" font-weight="600" fill="#3a5e96" text-anchor="middle">Confident Speaker</text>
+</svg>

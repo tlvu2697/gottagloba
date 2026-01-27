@@ -1,0 +1,32 @@
+<svg width="600" height="400" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="600" height="400" fill="#f8fafb"/>
+
+  <!-- Score progression - centered -->
+  <rect x="130" y="80" width="140" height="140" rx="16" fill="#e5e7eb"/>
+  <text x="200" y="165" font-family="system-ui, -apple-system" font-size="56" font-weight="700" fill="#6b7280" text-anchor="middle">6.0</text>
+
+  <!-- Arrow -->
+  <path d="M290 150 L310 150" stroke="#3a5e96" stroke-width="4" stroke-linecap="round"/>
+  <path d="M302 140 L310 150 L302 160" stroke="#3a5e96" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <rect x="330" y="80" width="140" height="140" rx="16" fill="#3a5e96"/>
+  <text x="400" y="165" font-family="system-ui, -apple-system" font-size="56" font-weight="700" fill="#ffffff" text-anchor="middle">8.0</text>
+
+  <!-- Success indicator -->
+  <circle cx="400" cy="40" r="20" fill="#10b981" opacity="0.2"/>
+  <path d="M392 40 L398 46 L408 34" stroke="#10b981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- IELTS Skills badges - perfectly centered with equal margins -->
+  <rect x="40" y="260" width="120" height="65" rx="10" fill="#fdbf65" opacity="0.3"/>
+  <text x="100" y="297" font-family="system-ui, -apple-system" font-size="16" font-weight="600" fill="#2f2b43" text-anchor="middle">Speaking</text>
+
+  <rect x="173" y="260" width="120" height="65" rx="10" fill="#3a5e96" opacity="0.2"/>
+  <text x="233" y="297" font-family="system-ui, -apple-system" font-size="16" font-weight="600" fill="#3a5e96" text-anchor="middle">Writing</text>
+
+  <rect x="306" y="260" width="120" height="65" rx="10" fill="#fdbf65" opacity="0.3"/>
+  <text x="366" y="297" font-family="system-ui, -apple-system" font-size="16" font-weight="600" fill="#2f2b43" text-anchor="middle">Reading</text>
+
+  <rect x="440" y="260" width="120" height="65" rx="10" fill="#3a5e96" opacity="0.2"/>
+  <text x="500" y="297" font-family="system-ui, -apple-system" font-size="16" font-weight="600" fill="#3a5e96" text-anchor="middle">Listening</text>
+</svg>

@@ -21,22 +21,16 @@ type JobOpeningsProps = {
 
 const DEFAULT_JOBS: Job[] = [
   {
-    title: "Product Designer",
+    title: "E-learning Specialist",
     type: "Full-time",
-    location: "Remote",
-    href: "/careers/product-designer",
+    location: "Ho Chi Minh City, Vietnam",
+    href: "https://linkedin.com/company/gottagloba/jobs",
   },
   {
-    title: "Backend Engineer",
+    title: "Marketing Executive",
     type: "Full-time",
-    location: "Remote",
-    href: "/careers/backend-engineer",
-  },
-  {
-    title: "Data Analyst",
-    type: "Full-time",
-    location: "Remote",
-    href: "/careers/data-analyst",
+    location: "Ho Chi Minh City, Vietnam",
+    href: "https://linkedin.com/company/gottagloba/jobs",
   },
 ];
 
@@ -45,7 +39,7 @@ export default function JobOpenings({
   title = "Jobs Opening",
   intro = `These openings represent diverse roles across various departments and levels within the company, offering candidates the chance to apply their skills and expertise in a professional setting.`,
   notifyText = "Get notified when new roles added",
-  notifyHref = "/careers/notify",
+  notifyHref = "https://linkedin.com/company/gottagloba/jobs",
   jobs = DEFAULT_JOBS,
 }: JobOpeningsProps) {
   return (
@@ -74,13 +68,13 @@ export default function JobOpenings({
                     {job.title}
                   </h3>
                   <p className="text-muted-foreground mt-2 text-sm">
-                    {job.type ?? "—"}
+                    {job.type ?? " - "}
                     {job.location ? <span> • {job.location}</span> : null}
                   </p>
                 </div>
 
                 <ArrowUpRight
-                  className="text-logo-gray mt-1 h-5 w-5 flex-shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  className="text-logo-gray mt-1 h-5 w-5 shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                   aria-hidden
                 />
               </Link>

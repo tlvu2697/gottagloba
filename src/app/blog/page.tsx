@@ -1,14 +1,12 @@
 "use client";
 
-import type {
-  GetBlogPostCategoriesResponse,
-  GetBlogPostsResponse,
-} from "@/app/blog/type";
 import BlogPostGrid from "@/components/sections/blog/blog-post-grid";
 import FeaturedBlogPost from "@/components/sections/blog/featured-blog-post";
 import SpinnerApplication from "@/components/spinner-application";
 import { strapiUrl } from "@/lib/utils";
-import type { BlogPostCategory } from "@/types/blog-post";
+import type { BlogPost, BlogPostCategory } from "@/types/blog-post";
+import type { Metadata } from "@/types/metadata";
+import type { StrapiResponse } from "@/types/strapi-response";
 import {
   keepPreviousData,
   useQuery,
@@ -28,7 +26,23 @@ const fetchBlogPostCategories = async (): Promise<BlogPostCategory[]> => {
   });
 
   const res = await fetch(strapiUrl(`/api/blog-post-categories?${query}`)!);
-  const json_res = (await res.json()) as GetBlogPostCategoriesResponse;
+  const json_res = (await res.json()) as StrapiResponse<BlogPostCategory[]>;
+
+  return json_res.data;
+};
+
+const fetchMetadata = async (): Promise<Metadata> => {
+  const params = qs.stringify({
+    populate: [
+      "featuredBlogPost",
+      "featuredBlogPost.authors.avatar",
+      "featuredBlogPost.image",
+      "featuredBlogPost.blogPostCategories",
+    ],
+  });
+
+  const res = await fetch(strapiUrl(`/api/metadata?${params}`)!);
+  const json_res = (await res.json()) as StrapiResponse<Metadata>;
 
   return json_res.data;
 };
@@ -37,18 +51,18 @@ const fetchBlogPosts = async ({
   page,
   query,
   category,
-  featured,
+  featuredSlug,
 }: {
   page?: number;
   query?: string;
   category?: string;
-  featured?: boolean;
-}): Promise<GetBlogPostsResponse> => {
+  featuredSlug?: string;
+}): Promise<StrapiResponse<BlogPost[]>> => {
   const params = qs.stringify({
     sort: "publishedAt:desc",
     populate: ["authors.avatar", "image", "blogPostCategories"],
     filters: {
-      ...(category !== undefined &&
+      ...(category &&
         category !== ALL_POST && {
           blogPostCategories: {
             name: {
@@ -56,7 +70,7 @@ const fetchBlogPosts = async ({
             },
           },
         }),
-      ...(query !== undefined && {
+      ...(query && {
         $or: [
           { title: { $containsi: query } },
           { subtitle: { $containsi: query } },
@@ -64,8 +78,8 @@ const fetchBlogPosts = async ({
           { content: { $containsi: query } },
         ],
       }),
-      ...(featured !== undefined && {
-        featured: { $eq: featured },
+      ...(featuredSlug && {
+        slug: { $ne: featuredSlug },
       }),
     },
     pagination: {
@@ -75,7 +89,7 @@ const fetchBlogPosts = async ({
   });
 
   const res = await fetch(strapiUrl(`/api/blog-posts?${params}`)!);
-  return (await res.json()) as GetBlogPostsResponse;
+  return (await res.json()) as StrapiResponse<BlogPost[]>;
 };
 
 export default function Page() {
@@ -84,42 +98,49 @@ export default function Page() {
   const [page, setPage] = useState<number>(1);
   const [category, setCategory] = useState<string>(ALL_POST);
 
+  const { data: metadata, isLoading: isLoadingMetadata } =
+    useQuery<Metadata>({
+      queryKey: ["metadata", "blog"],
+      placeholderData: keepPreviousData,
+      staleTime: 1 * 60 * 1000, // 1 minutes
+      queryFn: fetchMetadata,
+    });
+
   const { data: blogPostCategories, isLoading: isLoadingBlogPostCategories } =
     useQuery<BlogPostCategory[]>({
       queryKey: ["blog-post-categories"],
       placeholderData: keepPreviousData,
       staleTime: 1 * 60 * 1000, // 1 minutes
-      queryFn: () => fetchBlogPostCategories(),
+      queryFn: fetchBlogPostCategories,
     });
+
+  const featuredBlogPost = metadata?.featuredBlogPost;
 
   const {
-    data: blogPosts,
+    data: blogPostsResponse,
     isLoading: isLoadingBlogPosts,
     isPlaceholderData,
-  } = useQuery<GetBlogPostsResponse>({
-    queryKey: ["blog-posts", page, category, query],
+  } = useQuery<StrapiResponse<BlogPost[]>>({
+    queryKey: ["blog-posts", page, category, query, featuredBlogPost?.slug],
     placeholderData: keepPreviousData,
     staleTime: 1 * 60 * 1000, // 1 minutes
-    queryFn: () => fetchBlogPosts({ page, category, query }),
+    queryFn: () =>
+      fetchBlogPosts({
+        page,
+        category,
+        query,
+        featuredSlug: featuredBlogPost?.slug,
+      }),
   });
 
-  const { data: featuredBlogPosts, isLoading: isLoadingFeaturedBlogPosts } =
-    useQuery<GetBlogPostsResponse>({
-      queryKey: ["featured-blog-posts"],
-      placeholderData: keepPreviousData,
-      staleTime: 1 * 60 * 1000, // 1 minutes
-      queryFn: () => fetchBlogPosts({ featured: true }),
-    });
-
-  if (isLoadingBlogPostCategories || isLoadingFeaturedBlogPosts) {
+  if (isLoadingMetadata || isLoadingBlogPostCategories) {
     return <SpinnerApplication />;
   }
 
   const isLoadingPosts = isLoadingBlogPosts || isPlaceholderData;
   const blogPostCategoryNames =
     blogPostCategories?.map((cat) => cat.name) ?? [];
-  const totalPages = blogPosts?.meta.pagination.pageCount ?? 0;
-  const featuredBlogPost = featuredBlogPosts?.data[0];
+  const totalPages = blogPostsResponse?.meta.pagination.pageCount ?? 0;
 
   // Prefetch next page
   if (page < totalPages) {
@@ -134,7 +155,7 @@ export default function Page() {
       {featuredBlogPost && <FeaturedBlogPost blogPost={featuredBlogPost} />}
       <BlogPostGrid
         isLoading={isLoadingPosts}
-        blogPosts={blogPosts?.data ?? []}
+        blogPosts={blogPostsResponse?.data ?? []}
         categories={[ALL_POST, ...blogPostCategoryNames]}
         totalPages={totalPages}
         page={page}

@@ -1,0 +1,15 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Structured Practice icon: Learning path with checkpoints -->
+  <circle cx="6" cy="6" r="2.5" fill="#3a5e96" opacity="0.3" stroke="#3a5e96" stroke-width="1.5"/>
+  <circle cx="18" cy="12" r="2.5" fill="#3a5e96" opacity="0.6" stroke="#3a5e96" stroke-width="1.5"/>
+  <circle cx="6" cy="18" r="2.5" fill="#3a5e96" stroke="#3a5e96" stroke-width="1.5"/>
+
+  <!-- Path connecting circles -->
+  <path d="M7.5 7.5L16.5 10.5" stroke="#3a5e96" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="3 3"/>
+  <path d="M16.5 13.5L7.5 16.5" stroke="#3a5e96" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="3 3"/>
+
+  <!-- Checkmarks in circles -->
+  <path d="M4.5 6L5.5 7L7.5 5" stroke="#3a5e96" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M16.5 12L17.5 13L19.5 11" stroke="#3a5e96" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M4.5 18L5.5 19L7.5 17" stroke="#3a5e96" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
