@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 export interface DebouncedInputProps
   extends Omit<React.ComponentProps<"input">, "onChange"> {
   value: string | number;
-  onChange: (value: any) => void;
+  onChange: (value: unknown) => void;
   debounce?: number;
 }
 

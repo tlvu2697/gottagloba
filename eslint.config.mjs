@@ -1,17 +1,19 @@
-import { FlatCompat } from "@eslint/eslintrc";
+import {  globalIgnores } from "eslint/config";
+import nextVitals from "eslint-config-next/core-web-vitals";
 import tseslint from "typescript-eslint";
 import pluginQuery from "@tanstack/eslint-plugin-query";
 
-const compat = new FlatCompat({
-  baseDirectory: import.meta.dirname,
-});
+const eslintConfig = tseslint.config(
+  // Global ignores
+  globalIgnores([".next/**", "out/**", "build/**", "next-env.d.ts"]),
 
-export default tseslint.config(
-  {
-    ignores: [".next"],
-  },
-  ...compat.extends("next/core-web-vitals"),
+  // Next.js config
+  ...nextVitals,
+
+  // TanStack Query plugin
   ...pluginQuery.configs["flat/recommended"],
+
+  // TypeScript-specific configuration
   {
     files: ["**/*.ts", "**/*.tsx"],
     extends: [
@@ -38,6 +40,8 @@ export default tseslint.config(
       ],
     },
   },
+
+  // Linter options and language configuration
   {
     linterOptions: {
       reportUnusedDisableDirectives: true,
@@ -49,3 +53,5 @@ export default tseslint.config(
     },
   },
 );
+
+export default eslintConfig;

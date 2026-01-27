@@ -3,20 +3,12 @@
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const Banner = ({ url = "https://shadcnblocks.com" }: { url?: string }) => {
-  const [isVisible, setIsVisible] = useState(true);
-  const [isClient, setIsClient] = useState(false);
-
-  // Check localStorage to see if banner was previously dismissed
-  useEffect(() => {
-    setIsClient(true);
-    const bannerDismissed = localStorage.getItem("banner-dismissed");
-    if (bannerDismissed === "true") {
-      setIsVisible(false);
-    }
-  }, []);
+  const [isVisible, setIsVisible] = useState(
+    localStorage.getItem("banner-dismissed") === "true",
+  );
 
   const handleDismiss = () => {
     setIsVisible(false);
@@ -24,7 +16,7 @@ const Banner = ({ url = "https://shadcnblocks.com" }: { url?: string }) => {
   };
 
   // Don't render anything until client-side hydration is complete
-  if (!isClient || !isVisible) {
+  if (!isVisible) {
     return null;
   }
 

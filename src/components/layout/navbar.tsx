@@ -30,6 +30,7 @@ const Navbar = () => {
     if (!wrapper || !content) return;
 
     const viewportRemainder = Math.max(0, window.innerHeight - HEADER_HEIGHT);
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMinOpenHeight(viewportRemainder);
 
     const onEnd = () => {

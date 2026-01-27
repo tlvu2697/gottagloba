@@ -1,34 +1,29 @@
-import React, {
-  createElement,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
-import { createPortal } from 'react-dom';
+import type React from "react";
+import { createElement, useCallback, useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 
 type OwnProps = {
   children: React.ReactNode;
   className?: string;
-  mode?: ShadowRootInit['mode'];
+  mode?: ShadowRootInit["mode"];
   delegatesFocus?: boolean;
   as?: React.ElementType; // ← must be ElementType
 };
 
 type PolymorphicProps<E extends React.ElementType, P> = P &
-  Omit<React.ComponentPropsWithoutRef<E>, keyof P | 'ref' | 'children'> & {
+  Omit<React.ComponentPropsWithoutRef<E>, keyof P | "ref" | "children"> & {
     as?: E;
   };
 
-export default function ShadowRootHost<E extends React.ElementType = 'div'>({
+export default function ShadowRootHost<E extends React.ElementType = "div">({
   children,
   className,
-  mode = 'open',
+  mode = "open",
   delegatesFocus = false,
   as,
   ...rest
 }: PolymorphicProps<E, OwnProps>) {
-  const Tag = (as ?? 'div') as React.ElementType;
+  const Tag = (as ?? "div") as React.ElementType;
 
   const hostRef = useRef<HTMLElement | null>(null);
   const shadowRef = useRef<ShadowRoot | null>(null);
@@ -60,6 +55,7 @@ export default function ShadowRootHost<E extends React.ElementType = 'div'>({
 
   return createElement(
     Tag,
+    // eslint-disable-next-line react-hooks/refs
     { ref: setHostRef, className, ...rest },
     shadowEl ? createPortal(children, shadowEl as unknown as Element) : null,
   );
