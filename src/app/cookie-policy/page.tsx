@@ -1,8 +1,7 @@
-'use client';
+"use client";
 
-import LegalArticle from '@/components/sections/legal-article';
-
-import CookiePolicy from './cookie-policy.mdx';
+import LegalArticle from "@/components/sections/shared/legal-article";
+import CookiePolicy from "./cookie-policy.mdx";
 
 export default function Page() {
   return (

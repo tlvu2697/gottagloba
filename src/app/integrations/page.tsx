@@ -1,15 +1,13 @@
-import React from 'react';
-
-import MetafiCta from '@/components/sections/matafi-cta';
-import MetafiAllIntegrations from '@/components/sections/metafi-all-integrations';
-import MetafiIntegrationsHero from '@/components/sections/metafi-integrations-hero';
+import AllIntegrations from "@/components/sections/integrations/all-integrations";
+import IntegrationsHero from "@/components/sections/integrations/hero";
+import Cta from "@/components/sections/shared/cta";
 
 const page = () => {
   return (
     <>
-      <MetafiIntegrationsHero />
-      <MetafiAllIntegrations />
-      <MetafiCta />
+      <IntegrationsHero />
+      <AllIntegrations />
+      <Cta />
     </>
   );
 };

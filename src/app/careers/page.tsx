@@ -1,17 +1,17 @@
-import MetafiCta from '@/components/sections/matafi-cta';
-import MetafiCareersHero from '@/components/sections/metafi-careers-hero';
-import MetafiJobOpenings from '@/components/sections/metafi-job-openings';
-import MetafiMission from '@/components/sections/metafi-mission';
-import MetafiPerks from '@/components/sections/metafi-perks';
+import CareersHero from "@/components/sections/careers/careers-hero";
+import JobOpenings from "@/components/sections/careers/job-openings";
+import Mission from "@/components/sections/careers/mission";
+import Perks from "@/components/sections/careers/perks";
+import Cta from "@/components/sections/shared/cta";
 
 export default function AboutPage() {
   return (
     <>
-      <MetafiCareersHero />
-      <MetafiMission />
-      <MetafiPerks />
-      <MetafiJobOpenings />
-      <MetafiCta />
+      <CareersHero />
+      <Mission />
+      <Perks />
+      <JobOpenings />
+      <Cta />
     </>
   );
 }

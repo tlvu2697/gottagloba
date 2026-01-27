@@ -1,11 +1,9 @@
-import React from 'react';
-
-import MetafiContact from '@/components/sections/metafi-contact-section';
+import ContactSection from "@/components/sections/contact/contact-section";
 
 const page = () => {
   return (
     <>
-      <MetafiContact />
+      <ContactSection />
     </>
   );
 };

@@ -1,21 +1,19 @@
-import React from 'react';
-
-import MetafiCta from '@/components/sections/matafi-cta';
-import MetafiFeatureBenefits from '@/components/sections/metafi-feature-benefits';
-import MetafiFeaturePricing from '@/components/sections/metafi-feature-pricing';
-import MetafiFeaturesHero from '@/components/sections/metafi-features-section';
-import MetafiIntegrations from '@/components/sections/metafi-integrations';
-import MetafiFeaturesTabs from '@/components/sections/metafi-tabs';
+import FeatureBenefits from "@/components/sections/features/benefits";
+import FeaturePricing from "@/components/sections/features/pricing";
+import FeaturesHero from "@/components/sections/features/hero";
+import Integrations from "@/components/sections/shared/integrations";
+import FeaturesTabs from "@/components/sections/features/tabs";
+import Cta from "@/components/sections/shared/cta";
 
 const page = () => {
   return (
     <>
-      <MetafiFeaturesHero />
-      <MetafiFeatureBenefits />
-      <MetafiFeaturesTabs />
-      <MetafiFeaturePricing />
-      <MetafiIntegrations />
-      <MetafiCta />
+      <FeaturesHero />
+      <FeatureBenefits />
+      <FeaturesTabs />
+      <FeaturePricing />
+      <Integrations />
+      <Cta />
     </>
   );
 };

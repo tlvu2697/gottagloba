@@ -1,17 +1,15 @@
-import React from 'react';
-
-import MetafiCta from '@/components/sections/matafi-cta';
-import MetafiFaq from '@/components/sections/metafi-faq';
-import MetafiFeaturesIncluded from '@/components/sections/metafi-features-included';
-import MetafiPricingHero from '@/components/sections/metafi-pricing-hero';
+import FeaturesIncluded from "@/components/sections/pricing/features-included";
+import PricingHero from "@/components/sections/pricing/hero";
+import Cta from "@/components/sections/shared/cta";
+import Faq from "@/components/sections/shared/faq";
 
 const page = () => {
   return (
     <>
-      <MetafiPricingHero />
-      <MetafiFeaturesIncluded />
-      <MetafiFaq />
-      <MetafiCta />
+      <PricingHero />
+      <FeaturesIncluded />
+      <Faq />
+      <Cta />
     </>
   );
 };

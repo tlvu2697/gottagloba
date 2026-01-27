@@ -1,17 +1,17 @@
-import MetafiCta from '@/components/sections/matafi-cta';
-import MetafiAboutHero from '@/components/sections/metafi-about-hero';
-import MetafiPartnerLogos from '@/components/sections/metafi-partner-logos';
-import MetafiTeam from '@/components/sections/metafi-team';
-import MetafiThroughYears from '@/components/sections/metafi-trough-years';
+import AboutHero from "@/components/sections/about/hero";
+import PartnerLogos from "@/components/sections/about/partner-logos";
+import Team from "@/components/sections/about/team";
+import ThroughYears from "@/components/sections/about/through-years";
+import Cta from "@/components/sections/shared/cta";
 
 export default function AboutPage() {
   return (
     <>
-      <MetafiAboutHero />
-      <MetafiThroughYears />
-      <MetafiTeam />
-      <MetafiPartnerLogos />
-      <MetafiCta />
+      <AboutHero />
+      <ThroughYears />
+      <Team />
+      <PartnerLogos />
+      <Cta />
     </>
   );
 }

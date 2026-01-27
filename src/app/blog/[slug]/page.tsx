@@ -1,7 +1,7 @@
 "use client";
 
 import type { GetBlogPostsResponse } from "@/app/blog/type";
-import BlogPost from "@/components/sections/blog-post";
+import BlogPost from "@/components/sections/blog/blog-post";
 import SpinnerApplication from "@/components/spinner-application";
 import { strapiUrl } from "@/lib/utils";
 import { useQuery } from "@tanstack/react-query";
@@ -29,7 +29,7 @@ const fetchBlogPost = async (slug: string): Promise<GetBlogPostsResponse> => {
 };
 
 const Page = () => {
-  const slug = useParams().slug as string;
+  const { slug }: { slug: string } = useParams();
   const { data: apiData, isLoading } = useQuery<GetBlogPostsResponse>({
     queryKey: ["blog-posts", slug],
     queryFn: () => fetchBlogPost(slug),

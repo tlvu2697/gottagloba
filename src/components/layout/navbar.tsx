@@ -1,14 +1,12 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
-
-import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
-
-import { ThemeToggle } from '../ui/theme-toggle';
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { ThemeToggle } from "../ui/theme-toggle";
 
 const HEADER_HEIGHT = 80;
 
@@ -17,13 +15,13 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
-    document.body.classList.toggle('overflow-hidden', isMenuOpen);
-    return () => document.body.classList.remove('overflow-hidden');
+    document.body.classList.toggle("overflow-hidden", isMenuOpen);
+    return () => document.body.classList.remove("overflow-hidden");
   }, [isMenuOpen]);
 
   const wrapperRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
-  const [panelHeight, setPanelHeight] = useState<number | 'auto'>(0);
+  const [panelHeight, setPanelHeight] = useState<number | "auto">(0);
   const [minOpenHeight, setMinOpenHeight] = useState<number>(0);
 
   useLayoutEffect(() => {
@@ -35,14 +33,14 @@ const Navbar = () => {
     setMinOpenHeight(viewportRemainder);
 
     const onEnd = () => {
-      if (isMenuOpen) setPanelHeight('auto');
-      wrapper.removeEventListener('transitionend', onEnd);
+      if (isMenuOpen) setPanelHeight("auto");
+      wrapper.removeEventListener("transitionend", onEnd);
     };
 
     if (isMenuOpen) {
       const target = Math.max(content.scrollHeight, viewportRemainder);
       setPanelHeight(target);
-      wrapper.addEventListener('transitionend', onEnd);
+      wrapper.addEventListener("transitionend", onEnd);
     } else {
       const current = wrapper.getBoundingClientRect().height || 0;
       setPanelHeight(current);
@@ -55,7 +53,7 @@ const Navbar = () => {
       if (!isMenuOpen || !contentRef.current) return;
       const viewportRemainder = Math.max(0, window.innerHeight - HEADER_HEIGHT);
       setMinOpenHeight(viewportRemainder);
-      if (panelHeight !== 'auto') {
+      if (panelHeight !== "auto") {
         const target = Math.max(
           contentRef.current.scrollHeight,
           viewportRemainder,
@@ -63,17 +61,17 @@ const Navbar = () => {
         setPanelHeight(target);
       }
     };
-    window.addEventListener('resize', onResize);
-    return () => window.removeEventListener('resize', onResize);
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
   }, [isMenuOpen, panelHeight]);
 
   const ITEMS = [
-    { label: 'Features', href: '/features' },
-    { label: 'Integrations', href: '/integrations' },
-    { label: 'About Us', href: '/about' },
-    { label: 'Pricing', href: '/pricing' },
-    { label: 'Blog', href: '/blog' },
-    { label: 'Contact', href: '/contact' },
+    { label: "Features", href: "/features" },
+    { label: "Integrations", href: "/integrations" },
+    { label: "About Us", href: "/about" },
+    { label: "Pricing", href: "/pricing" },
+    { label: "Blog", href: "/blog" },
+    { label: "Contact", href: "/contact" },
   ];
 
   return (
@@ -82,7 +80,7 @@ const Navbar = () => {
         <Link href="/" className="flex items-center gap-2">
           <Image
             src="/images/layout/logo.svg"
-            alt="Metafi"
+            alt="Gotta GLOBA"
             width={129}
             height={32}
             className="invert-0 dark:invert"
@@ -96,8 +94,8 @@ const Navbar = () => {
               key={link.label}
               href={link.href}
               className={cn(
-                'text-muted-foreground hover:text-foreground text-sm font-medium transition-colors',
-                pathname === link.href && 'text-foreground',
+                "text-muted-foreground hover:text-foreground text-sm font-medium transition-colors",
+                pathname === link.href && "text-foreground",
               )}
             >
               {link.label}
@@ -106,12 +104,12 @@ const Navbar = () => {
         </nav>
 
         <div className="flex items-center gap-2.5">
-          <Link href="/login" className={cn('hidden sm:block lg:block')}>
+          <Link href="/login" className={cn("hidden sm:block lg:block")}>
             <Button size="sm" variant="outline">
               Login
             </Button>
           </Link>
-          <Link href="/pricing" className={cn('hidden sm:block lg:block')}>
+          <Link href="/pricing" className={cn("hidden sm:block lg:block")}>
             <Button size="sm" variant="default">
               Get Started
             </Button>
@@ -132,22 +130,22 @@ const Navbar = () => {
               <span
                 aria-hidden="true"
                 className={cn(
-                  'absolute block h-0.5 w-full rounded-full bg-current transition duration-500 ease-in-out',
-                  isMenuOpen ? 'rotate-45' : '-translate-y-1.5',
+                  "absolute block h-0.5 w-full rounded-full bg-current transition duration-500 ease-in-out",
+                  isMenuOpen ? "rotate-45" : "-translate-y-1.5",
                 )}
               />
               <span
                 aria-hidden="true"
                 className={cn(
-                  'absolute block h-0.5 w-full rounded-full bg-current transition duration-500 ease-in-out',
-                  isMenuOpen ? 'opacity-0' : 'opacity-100',
+                  "absolute block h-0.5 w-full rounded-full bg-current transition duration-500 ease-in-out",
+                  isMenuOpen ? "opacity-0" : "opacity-100",
                 )}
               />
               <span
                 aria-hidden="true"
                 className={cn(
-                  'absolute block h-0.5 w-full rounded-full bg-current transition duration-500 ease-in-out',
-                  isMenuOpen ? '-rotate-45' : 'translate-y-1.5',
+                  "absolute block h-0.5 w-full rounded-full bg-current transition duration-500 ease-in-out",
+                  isMenuOpen ? "-rotate-45" : "translate-y-1.5",
                 )}
               />
             </div>
@@ -160,14 +158,14 @@ const Navbar = () => {
         <div
           ref={wrapperRef}
           style={{
-            height: panelHeight === 'auto' ? 'auto' : panelHeight,
+            height: panelHeight === "auto" ? "auto" : panelHeight,
             minHeight: isMenuOpen ? `${minOpenHeight}px` : undefined,
-            transition: 'height 320ms cubic-bezier(.22,.61,.36,1)',
+            transition: "height 320ms cubic-bezier(.22,.61,.36,1)",
           }}
           className={cn(
-            'border-border bg-background overflow-hidden border-t',
+            "border-border bg-background overflow-hidden border-t",
             // full-bleed: escape container padding and span edge-to-edge
-            'relative right-1/2 left-1/2 -mr-[50vw] -ml-[50vw] w-screen',
+            "relative right-1/2 left-1/2 -mr-[50vw] -ml-[50vw] w-screen",
           )}
           aria-hidden={!isMenuOpen}
         >
@@ -181,11 +179,11 @@ const Navbar = () => {
               <div className="px-5">
                 <nav
                   className={cn(
-                    'mt-6 flex flex-col',
-                    'transition-[transform,opacity] duration-300',
+                    "mt-6 flex flex-col",
+                    "transition-[transform,opacity] duration-300",
                     isMenuOpen
-                      ? 'translate-y-0 opacity-100'
-                      : 'translate-y-2 opacity-0',
+                      ? "translate-y-0 opacity-100"
+                      : "translate-y-2 opacity-0",
                   )}
                 >
                   <div className="flex flex-col gap-6">
@@ -194,10 +192,10 @@ const Navbar = () => {
                         key={link.label}
                         href={link.href}
                         className={cn(
-                          'text-lg tracking-[-0.36px]',
+                          "text-lg tracking-[-0.36px]",
                           pathname === link.href
-                            ? 'text-foreground'
-                            : 'text-muted-foreground',
+                            ? "text-foreground"
+                            : "text-muted-foreground",
                         )}
                         onClick={() => setIsMenuOpen(false)}
                       >

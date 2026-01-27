@@ -4,8 +4,8 @@ import type {
   GetBlogPostCategoriesResponse,
   GetBlogPostsResponse,
 } from "@/app/blog/type";
-import FeaturedPost from "@/components/sections/blog-featured";
-import BlogGrid from "@/components/sections/blog-grid";
+import BlogPostGrid from "@/components/sections/blog/blog-post-grid";
+import FeaturedBlogPost from "@/components/sections/blog/featured-blog-post";
 import SpinnerApplication from "@/components/spinner-application";
 import { strapiUrl } from "@/lib/utils";
 import type { BlogPostCategory } from "@/types/blog-post";
@@ -131,10 +131,10 @@ export default function Page() {
 
   return (
     <>
-      {featuredBlogPost && <FeaturedPost post={featuredBlogPost} />}
-      <BlogGrid
+      {featuredBlogPost && <FeaturedBlogPost blogPost={featuredBlogPost} />}
+      <BlogPostGrid
         isLoading={isLoadingPosts}
-        posts={blogPosts?.data ?? []}
+        blogPosts={blogPosts?.data ?? []}
         categories={[ALL_POST, ...blogPostCategoryNames]}
         totalPages={totalPages}
         page={page}

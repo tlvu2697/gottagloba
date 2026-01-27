@@ -2,14 +2,14 @@
 
 import { BUNDLES, FEATURED_BUNDLE } from "@/app/mock";
 import type { GetMetadataResponse } from "@/app/type";
-import { LearnWorldsCourseBundles } from "@/components/sections/learnworlds-course-bundles";
-import MetafiCta from "@/components/sections/matafi-cta";
-import MetafiFaq from "@/components/sections/metafi-faq";
-import MetafiFeatures from "@/components/sections/metafi-features";
-import MetafiHero from "@/components/sections/metafi-hero";
-import MetafiIntegrations from "@/components/sections/metafi-integrations";
-import MetafiLogos from "@/components/sections/metafi-logos";
-import MetafiTestimonials from "@/components/sections/metafi-testimonials";
+import Features from "@/components/sections/home/features";
+import HomeHero from "@/components/sections/home/hero";
+import Logos from "@/components/sections/home/logos";
+import Testimonials from "@/components/sections/home/testimonials";
+import LearnWorldsCourseBundles from "@/components/sections/home/learnworlds-course-bundles";
+import Cta from "@/components/sections/shared/cta";
+import Faq from "@/components/sections/shared/faq";
+import Integrations from "@/components/sections/shared/integrations";
 import { getAllBundles, getBundleById } from "@/data/learnworlds/api";
 import type { LearnWorldsBundle } from "@/data/learnworlds/types/bundle";
 import { strapiUrl } from "@/lib/utils";
@@ -53,20 +53,19 @@ export default function Home() {
 
   return (
     <>
-      {!isLoading && (
+      {!MOCK && !isLoading && (
         <LearnWorldsCourseBundles
           featuredBundle={featuredBundle ?? FEATURED_BUNDLE}
           bundles={bundles ?? BUNDLES}
         />
       )}
-      <MetafiHero />
-      <MetafiLogos />
-      <MetafiFeatures />
-      <MetafiIntegrations />
-      <MetafiTestimonials />
-      <MetafiFaq />
-      {/* <MetafiFeaturedBlogPosts posts={cards} /> */}
-      <MetafiCta />
+      <HomeHero />
+      <Logos />
+      <Features />
+      <Integrations />
+      <Testimonials />
+      <Faq />
+      <Cta />
     </>
   );
 }

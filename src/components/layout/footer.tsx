@@ -1,41 +1,41 @@
-import { Facebook, Linkedin, Twitter } from 'lucide-react';
-import Image from 'next/image';
-import Link from 'next/link';
+import { Facebook, Linkedin, Twitter } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 const columns = [
   {
-    title: 'Product',
+    title: "Product",
     links: [
-      { name: 'Features', href: '/features' },
-      { name: 'Integrations', href: '/integrations' },
-      { name: 'Pricing', href: '/pricing' },
+      { name: "Features", href: "/features" },
+      { name: "Integrations", href: "/integrations" },
+      { name: "Pricing", href: "/pricing" },
     ],
   },
   {
-    title: 'Company',
+    title: "Company",
     links: [
-      { name: 'About Us', href: '/about' },
-      { name: 'Careers', href: '/careers' },
-      { name: 'Contact', href: '/contact' },
-      { name: 'Blog', href: '/blog' },
+      { name: "About Us", href: "/about" },
+      { name: "Careers", href: "/careers" },
+      { name: "Contact", href: "/contact" },
+      { name: "Blog", href: "/blog" },
     ],
   },
   {
-    title: 'Legal & Access',
+    title: "Legal & Access",
     links: [
-      { name: 'Privacy Policy', href: '/privacy' },
-      { name: 'Terms of Service', href: '/terms' },
-      { name: 'Cookie Policy', href: '/cookie-policy' },
-      { name: 'Sign Up', href: '/signup' },
-      { name: 'Login', href: '/login' },
+      { name: "Privacy Policy", href: "/privacy" },
+      { name: "Terms of Service", href: "/terms" },
+      { name: "Cookie Policy", href: "/cookie-policy" },
+      { name: "Sign Up", href: "/signup" },
+      { name: "Login", href: "/login" },
     ],
   },
 ];
 
 const socials = [
-  { Icon: Linkedin, href: 'https://linkedin.com' },
-  { Icon: Twitter, href: 'https://twitter.com' },
-  { Icon: Facebook, href: 'https://facebook.com' },
+  { Icon: Linkedin, href: "https://linkedin.com" },
+  { Icon: Twitter, href: "https://twitter.com" },
+  { Icon: Facebook, href: "https://facebook.com" },
 ];
 
 export const Footer = () => {
@@ -44,10 +44,10 @@ export const Footer = () => {
       <div className="container py-12 md:py-16">
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
           <div className="md:min-w-[140px]">
-            <Link href="/" aria-label="Metafi">
+            <Link href="/" aria-label="Gotta GLOBA">
               <Image
                 src="/images/layout/logo.svg"
-                alt="Metafi"
+                alt="Gotta GLOBA"
                 width={140}
                 height={32}
                 className="invert"
@@ -84,7 +84,7 @@ export const Footer = () => {
         {/* bottom bar */}
         <div className="mt-6 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
           <p className="text-muted-foreground text-sm font-normal">
-            © {new Date().getFullYear()} Metafi. All rights reserved
+            © {new Date().getFullYear()} Gotta GLOBA. All rights reserved
           </p>
 
           <div className="flex items-center gap-4">

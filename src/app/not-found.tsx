@@ -1,16 +1,16 @@
-import Link from 'next/link';
+import Link from "next/link";
 
-import { Button } from '@/components/ui/button';
+import { Button } from "@/components/ui/button";
 
 export default function NotFound() {
   return (
     <section
-      id="metafi-404"
+      id="404"
       className="bg-background relative overflow-hidden px-6 lg:px-0"
     >
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute inset-x-0 bottom-0 h-[500px]">
-          <div className="from-features-hero-top-0 to-features-hero-bottom absolute inset-0 bg-gradient-to-b" />
+          <div className="from-features-hero-top-0 to-features-hero-bottom absolute inset-0 bg-linear-to-b" />
         </div>
       </div>
 
@@ -25,7 +25,7 @@ export default function NotFound() {
           </h2>
 
           <p className="text-muted-foreground mt-6 text-lg sm:text-xl">
-            The page you’re looking for doesn’t exist or has been moved.
+            The page you&apos;re looking for doesn&apos;t exist or has been moved.
           </p>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:justify-center sm:gap-4">

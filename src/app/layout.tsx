@@ -3,10 +3,10 @@ import "@/styles/globals.css";
 import { Footer } from "@/components/layout/footer";
 import Navbar from "@/components/layout/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import { queryClient } from "@/lib/query-client";
 import { QueryClientProvider } from "@tanstack/react-query";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -16,9 +16,10 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://gottagloba.com'),
   title: {
-    default: "Metafi - Modern Next.js Template",
-    template: "%s | Metafi",
+    default: "Gotta GLOBA - Global-scale Career",
+    template: "%s | Gotta GLOBA",
   },
   description:
     "A modern, fully featured Next.js template built with Shadcn/UI, TailwindCSS and TypeScript, perfect for your next web application.",
@@ -32,9 +33,9 @@ export const metadata: Metadata = {
     "Shadcn/UI",
     "Web Development",
   ],
-  authors: [{ name: "Metafi Team" }],
-  creator: "Metafi Team",
-  publisher: "Metafi",
+  authors: [{ name: "Gotta GLOBA Team" }],
+  creator: "Gotta GLOBA Team",
+  publisher: "Gotta GLOBA",
   robots: { index: true, follow: true },
   icons: {
     icon: [
@@ -48,26 +49,26 @@ export const metadata: Metadata = {
     shortcut: [{ url: "/favicon/favicon.ico" }],
   },
   openGraph: {
-    title: "Metafi - Modern Next.js Template",
+    title: "Gotta GLOBA - Global-scale Career",
     description:
-      "A modern, fully featured Next.js template built with Shadcn/UI, TailwindCSS and TypeScript, perfect for your next web application.",
-    siteName: "Metafi",
+      "A global-scale career is no longer a distant dream with Gotta GLOBA.",
+    siteName: "Gotta GLOBA",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Metafi - Modern Next.js Template",
+        alt: "Gotta GLOBA - Global-scale Career",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Metafi - Modern Next.js Template",
+    title: "Gotta GLOBA - Global-scale Career",
     description:
-      "A modern, fully featured Next.js template built with Shadcn/UI, TailwindCSS and TypeScript, perfect for your next web application.",
+      "A global-scale career is no longer a distant dream with Gotta GLOBA.",
     images: ["/og-image.jpg"],
-    creator: "@metafi",
+    creator: "@gottaGLOBA",
   },
 };
 
@@ -83,7 +84,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {/* <Banner url="https://www.shadcnblocks.com/template/metafi" /> */}
+          {/* <Banner url="https://www.youtube.com/@GottaGLOBA?sub_confirmation=1" /> */}
           <Navbar />
           <main className="flex grow flex-col">
             <QueryClientProvider client={queryClient}>
